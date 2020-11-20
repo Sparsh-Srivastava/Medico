@@ -2,12 +2,15 @@ POST http://localhost:5000/register
 content-type : application/json
 
 {
-    "name": "N'Golo Kante",
-    "email": "k@chelsea.com",
+    "name": "Test",
+    "email": "dsubsasdsaddsd@in.com",
     "password": "iam07c",
     "password2": "iam07c",
-    "city": "chennai"
+    "city": "chennai",
+    "yourMessages" : [],
+    "doctorMessages" : []
 }
+
 
 ###
 
@@ -15,14 +18,15 @@ POST http://localhost:5000/registerDoc
 Content-Type: application/json
 
 {
-    "name": "N'Golo Kante",
-    "email": "k2@chelsea.com",
+    "name": "GG",
+    "email": "hhsccscsdssd@gmail.com",
     "password": "iam07c",
     "password2": "iam07c",
     "city": "",
     "special": "Cardiologist",
     "bio": "I am a very well educate doctor",
-    "city": "France"
+    "city": "France",
+    "patientMessages" : []
 }
 
 ###
@@ -44,3 +48,4 @@ Content-Type: application/json
     "email": "k2@chelsea.com",
     "password": "iam07c"
 }
+

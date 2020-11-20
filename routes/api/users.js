@@ -185,4 +185,67 @@ router.post("/loginDoc", (req, res) => {
   });
 });
 
+// Patient Contacting Doctor
+router.post("/contactDoctor", (req, res) => {
+  let { name, email, description } = req.body;
+  let doctorId = "5fb81a60edc0683468c63ccb";
+  let patientId = "5fb81a49edc0683468c63cca";
+  let newMessage = {
+    doctorId: doctorId,
+    patientId: patientId,
+    name: name,
+    email: email,
+    description: description,
+    date: new Date(),
+  };
+  User.findByIdAndUpdate(
+    patientId,
+    { $push: { yourMessages: newMessage } },
+    function (err, doc) {
+      if (err) {
+        console.error(err);
+      } else {
+        console.log("Message saved in database");
+      }
+    }
+  );
+
+  Doc.findByIdAndUpdate(
+    doctorId,
+    { $push: { patientMessages: newMessage } },
+    function (err, doc) {
+      if (err) {
+        console.log(err);
+      } else {
+        console.log("Message sent to the doctor");
+        // res.json({ message: "Send" });
+      }
+    }
+  );
+});
+
+// Doctor Replying Back To Patient
+router.post("/contactPatient", (req, res) => {
+  let { replyMessage } = req.body;
+  let doctorId = "5fb81a60edc0683468c63ccb";
+  let patientId = "5fb81a49edc0683468c63cca";
+  let newMessage = {
+    doctorId: doctorId,
+    reply: replyMessage,
+    date: new Date(),
+  };
+  User.findByIdAndUpdate(
+    patientId,
+    { $push: { doctorMessages: newMessage } },
+    function (err, doc) {
+      if (err) {
+        console.log(err);
+      } else {
+        console.log("Message sent to the patient");
+        // res.json({ message: "Send" });
+      }
+    }
+  );
+});
+
 module.exports = router;
