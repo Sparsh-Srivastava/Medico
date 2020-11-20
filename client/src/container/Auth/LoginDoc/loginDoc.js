@@ -33,7 +33,7 @@ class Login extends Component {
         this.setState({ errMessage: err.message });
       }); */
 
-    await Axios.post("/loginDoc", {
+    await Axios.post("http://localhost:5000/loginDoc", {
       email: this.state.email,
       password: this.state.password,
     })

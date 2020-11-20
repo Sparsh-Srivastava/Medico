@@ -25,7 +25,7 @@ class Signup extends Component {
   }
   signup = async (e) => {
     e.preventDefault();
-    await Axios.post("/registerDoc", {
+    await Axios.post("http://localhost:5000/registerDoc", {
       name: this.state.name,
       email: this.state.email,
       password: this.state.password,
