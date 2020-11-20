@@ -4,36 +4,59 @@ const Schema = mongoose.Schema;
 const DocSchema = new Schema({
   name: {
     type: String,
-    required: true
+    required: true,
   },
   email: {
     type: String,
-    required: true
+    required: true,
   },
   password: {
     type: String,
-    required: true
+    required: true,
   },
   date: {
     type: Date,
-    default: Date.now
+    default: Date.now,
   },
   image: {
-      type: String,
-      required: false
+    type: String,
+    required: false,
   },
   special: {
-      type: String,
-      required: true
+    type: String,
+    required: true,
   },
   bio: {
-      type: String,
-      required: true
+    type: String,
+    required: true,
   },
   city: {
-      type: String,
-      required: true
-  }
+    type: String,
+    required: true,
+  },
+  patientMessages: [
+    {
+      doctorId: {
+        type: String,
+      },
+      patientId: {
+        type: String,
+      },
+      name: {
+        type: String,
+      },
+      email: {
+        type: String,
+      },
+      description: {
+        type: String,
+        required: true,
+      },
+      date: {
+        type: Date,
+      },
+    },
+  ],
 });
 
 module.exports = Doc = mongoose.model("docs", DocSchema);
