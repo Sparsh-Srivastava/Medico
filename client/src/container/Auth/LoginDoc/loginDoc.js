@@ -2,7 +2,7 @@ import React, { Component, useEffect } from "react";
 // import React, { Component} from "react";
 import { Route, Redirect, Link } from "react-router-dom";
 // import { Redirect, Link } from "react-router-dom";
-import img from "../public/Assets/undraw_authentication_fsn5 (2).svg"
+import img from "./undraw_authentication_fsn5 (2).svg"
 import "./loginDoc.css";
 import Axios from "axios";
 class Login extends Component {
