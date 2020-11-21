@@ -13,6 +13,9 @@ const User = require("../../models/user");
 // Load Doctor model
 const Doc = require("../../models/doc");
 
+//Load Med model
+const Med = require("../../models/med");
+
 // @route POST api/users/register
 // @desc Register user
 // @access Public
@@ -267,6 +270,24 @@ router.post("/getDoctorsAtLocation", (req, res) => {
     } else {
       res.json(doc);
     }
+  });
+});
+
+//Patient's med info
+router.post("/dashboard/profile", (req,res) => {
+  const newMed = new Med({
+    name: req.body.name,
+    email: req.body.email,
+    phone: req.body.phone,
+    age: req.body.age,
+    dob: req.body.dob,
+    city: req.body.city,
+    blood: req.body.blood,
+    address: req.body.address,
+    description: req.body.description,
+    emergencyName: req.body.emergencyName,
+    emergencyNum: req.body.emergencyNum,
+    gender: req.body.gender
   });
 });
 

@@ -4,11 +4,13 @@ const Schema = mongoose.Schema;
 const MedSchema = new Schema({
   name: {
     type: String,
-    required: true
+    required: true,
+    ref: 'User'
   },
   email: {
     type: String,
-    required: true
+    required: true,
+    ref: 'User'
   },
   phone: {
     type: Number,
@@ -24,7 +26,8 @@ const MedSchema = new Schema({
   },
   city: {
     type: String,
-    required: true
+    required: true,
+    ref: 'User'
   },
   blood: {
     type: String,
