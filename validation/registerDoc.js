@@ -11,6 +11,7 @@ module.exports = function validateRegisterInputDoc(data) {
   data.special = !isEmpty(data.special) ? data.special : "";
   data.bio = !isEmpty(data.bio) ? data.bio : "";
   data.city = !isEmpty(data.city) ? data.city : "";
+  // data.state = !isEmpty(data.state) ? data.state : "";
   // Name checks
   if (Validator.isEmpty(data.name)) {
     errors.name = "Name field is required";
@@ -50,6 +51,10 @@ module.exports = function validateRegisterInputDoc(data) {
     errors.city = "Where are you from?";
   }
 
+  //State Check
+  // if (Validator.isEmpty(data.State)) {
+  //   errors.state = "Where do you live?";
+  // }
   return {
     errors,
     isValid: isEmpty(errors),

@@ -30,7 +30,7 @@ class Signup extends Component {
       email: this.state.email,
       password: this.state.password,
       city: this.state.location,
-      password2: this.state.password
+      password2: this.state.password,
     })
       .then((res) => console.log("done"))
       .catch((err) => console.log(err));
@@ -164,22 +164,14 @@ class Signup extends Component {
               </div>
               <div className="row">
                 <div className="col-sm-2">
-<<<<<<< HEAD
-                  <label><i class="fas fa-check-circle fa-lg"></i></label>
-=======
                   <label>
                     <i className="fas fa-phone-alt fa-lg"></i>
                   </label>
->>>>>>> 31ec89f8c9b7bd88ae802586c04eca232d2997e5
                 </div>
                 <div className="col-sm-10">
                   <input
                     value={this.state.phone}
                     name="phone"
-<<<<<<< HEAD
-                    type="password"
-                    placeholder="Re-Enter Your Password"
-=======
                     type="Number"
                     placeholder="Enter your Phone No"
                     className="form-control"
@@ -200,7 +192,6 @@ class Signup extends Component {
                     type="text"
                     name="address"
                     placeholder="Enter your City"
->>>>>>> 31ec89f8c9b7bd88ae802586c04eca232d2997e5
                     className="form-control"
                     aria-describedby="emailHelp"
                     onChange={this.handleChange}

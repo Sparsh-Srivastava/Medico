@@ -119,6 +119,7 @@ router.post("/registerDoc", (req, res) => {
         special: req.body.special,
         bio: req.body.bio,
         city: req.body.city,
+        state: req.body.state,
       });
       // Hash password before saving in database
       bcrypt.genSalt(10, (err, salt) => {
@@ -251,7 +252,21 @@ router.post("/contactPatient", (req, res) => {
 // Fetch All Doctors
 router.get("/allDoctors", (req, res) => {
   Doc.find({}, (err, doctors) => {
-    res.json(doctors);
+    if (err) {
+      console.log(err);
+    } else {
+      res.json(doctors);
+    }
+  });
+});
+// Get doctors based on the location
+router.post("/getDoctorsAtLocation", (req, res) => {
+  Doc.find({ city: req.body.city }, (err, doc) => {
+    if (err) {
+      console.log(err);
+    } else {
+      res.json(doc);
+    }
   });
 });
 
