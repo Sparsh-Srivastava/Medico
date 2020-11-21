@@ -294,7 +294,9 @@ router.post("/getDoctorInfo", (req, res) => {
 });
 
 //Patient's med info
-router.post("/dashboard/profile", (req, res) => {
+router.post("/profile", (req, res) => {
+  // const body = req.body
+
   const newMed = new Med({
     name: req.body.name,
     email: req.body.email,
@@ -309,6 +311,33 @@ router.post("/dashboard/profile", (req, res) => {
     emergencyNum: req.body.emergencyNum,
     gender: req.body.gender,
   });
-});
+
+  if (!newMed) {
+      return res.status(400).json({
+          success: false,
+          error: 'You must provide data',
+      })
+  }
+
+  if (!newMed) {
+      return res.status(400).json({ success: false, error: err })
+  }
+
+  newMed
+      .save()
+      .then(() => {
+          return res.status(201).json({
+              success: true,
+              id: movie._id,
+              message: 'Data created!',
+          })
+      })
+      .catch(error => {
+          return res.status(400).json({
+              error,
+              message: 'Data not created!',
+          })
+      })
+    });
 
 module.exports = router;

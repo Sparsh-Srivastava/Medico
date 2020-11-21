@@ -49,3 +49,23 @@ Content-Type: application/json
     "password": "iam07c"
 }
 
+###
+
+POST http://localhost:5000/profile
+Content-Type: application/json
+
+{
+    "name": "Me",
+    "email": "me@email.com",
+    "phone": 111111111,
+    "age": 25,
+    "dob": "02/07/1995",
+    "city": "Chennai",
+    "blood": "B+",
+    "address": "Somewhere",
+    "description": "I am healthy",
+    "emergencyname": "You",
+    "emergencynum": 2222222222,
+    "gender": "Male"
+}
+
