@@ -17,8 +17,14 @@ const Home = () => {
     const patientId = localStorage.getItem("patientId");
 
     const PatientInfo = async () => {
-        await Axios.get("http://localhost:5000/getPatientInfo", { patientId })
-            .then((res) => updatePatient(res.data))
+        await Axios.post("http://localhost:5000/getPatientInfo", { patientId })
+            .then((res) => {
+                // if (res.data._id === patientId) {
+                //   res.data.updatePatient(res.data);
+                // }
+                updatePatient(res.data);
+                console.log(res.data);
+            })
             .catch((err) => console.log(err));
     };
 
