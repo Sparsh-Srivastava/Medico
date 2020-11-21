@@ -191,8 +191,8 @@ router.post("/loginDoc", (req, res) => {
 // Patient Contacting Doctor
 router.post("/contactDoctor", (req, res) => {
   let { name, email, description } = req.body;
-  let doctorId = "5fb81a60edc0683468c63ccb";
-  let patientId = "5fb81a49edc0683468c63cca";
+  let doctorId = "5fb9345a4712ae46753b55cc";
+  let patientId = "5fb92bb6b44a0c3e8d9a9482";
   let newMessage = {
     doctorId: doctorId,
     patientId: patientId,
@@ -231,7 +231,7 @@ router.post("/contactDoctor", (req, res) => {
 router.post("/contactPatient", (req, res) => {
   let { replyMessage } = req.body;
   let doctorId = "5fb81a60edc0683468c63ccb";
-  let patientId = "5fb81a49edc0683468c63cca";
+  let patientId = "5fb906db18dd191f4ae843f2";
   let newMessage = {
     doctorId: doctorId,
     reply: replyMessage,
@@ -285,7 +285,7 @@ router.get("/getPatientInfo", (req, res) => {
 
 // Get Doctor Information
 router.post("/getDoctorInfo", (req, res) => {
-  User.findById(req.body.id, (err, doc) => {
+  Doc.findById(req.body.id, (err, doc) => {
     if (err) {
       console.log(err);
     } else {
