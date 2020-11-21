@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Redirect, Link } from "react-router-dom";
 
-import img from "./undraw_unlock_24mb.svg"
+import img from "./undraw_unlock_24mb.svg";
 import "./signupPt.css";
 import Axios from "axios";
 import { localsName } from "ejs";
@@ -32,8 +32,7 @@ class Signup extends Component {
       city: this.state.location,
       password2: this.state.password
     })
-      .then((res) =>
-        console.log('done'))
+      .then((res) => console.log("done"))
       .catch((err) => console.log(err));
   };
   handleChange(e) {
@@ -51,27 +50,53 @@ class Signup extends Component {
     return (
       <div className="signupPt">
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-          <a className="navbar-brand" href="#">Navbar</a>
-          <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <a className="navbar-brand" href="#">
+            Navbar
+          </a>
+          <button
+            className="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
             <span className="navbar-toggler-icon"></span>
           </button>
 
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav ml-auto">
               <li className="nav-item">
-                <a className="nav-link" href="/#">Home <span className="sr-only">(current)</span></a>
+                <a className="nav-link" href="/#">
+                  Home <span className="sr-only">(current)</span>
+                </a>
               </li>
               <li className="nav-item dropdown">
-                <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a
+                  className="nav-link dropdown-toggle"
+                  href="#"
+                  id="navbarDropdown"
+                  role="button"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                >
                   Log In
-              </a>
+                </a>
                 <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <a className="dropdown-item" href="/loginDoc">As a Doctor</a>
-                  <a className="dropdown-item" href="/loginPt">As a Patient</a>
+                  <a className="dropdown-item" href="/loginDoc">
+                    As a Doctor
+                  </a>
+                  <a className="dropdown-item" href="/loginPt">
+                    As a Patient
+                  </a>
                 </div>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="/#">Contact Us <span className="sr-only"></span></a>
+                <a className="nav-link" href="/#">
+                  Contact Us <span className="sr-only"></span>
+                </a>
               </li>
             </ul>
           </div>
@@ -85,7 +110,9 @@ class Signup extends Component {
             <form>
               <div className="row">
                 <div className="col-sm-2">
-                  <label><i className="fas fa-signature fa-lg"></i></label>
+                  <label>
+                    <i className="fas fa-signature fa-lg"></i>
+                  </label>
                 </div>
                 <div className="col-sm-10">
                   <input
@@ -101,7 +128,9 @@ class Signup extends Component {
               </div>
               <div className="row">
                 <div className="col-sm-2">
-                  <label htmlFor="exampleInputEmail1"><i className="fas fa-envelope fa-lg"></i></label>
+                  <label htmlFor="exampleInputEmail1">
+                    <i className="fas fa-envelope fa-lg"></i>
+                  </label>
                 </div>
                 <div className="col-sm-10">
                   <input
@@ -117,7 +146,9 @@ class Signup extends Component {
               </div>
               <div className="row">
                 <div className="col-sm-2">
-                  <label><i className="fas fa-key fa-lg"></i></label>
+                  <label>
+                    <i className="fas fa-key fa-lg"></i>
+                  </label>
                 </div>
                 <div className="col-sm-10">
                   <input
@@ -133,14 +164,24 @@ class Signup extends Component {
               </div>
               <div className="row">
                 <div className="col-sm-2">
+<<<<<<< HEAD
                   <label><i class="fas fa-check-circle fa-lg"></i></label>
+=======
+                  <label>
+                    <i className="fas fa-phone-alt fa-lg"></i>
+                  </label>
+>>>>>>> 31ec89f8c9b7bd88ae802586c04eca232d2997e5
                 </div>
                 <div className="col-sm-10">
                   <input
                     value={this.state.phone}
                     name="phone"
+<<<<<<< HEAD
                     type="password"
                     placeholder="Re-Enter Your Password"
+=======
+                    type="Number"
+                    placeholder="Enter your Phone No"
                     className="form-control"
                     aria-describedby="emailHelp"
                     onChange={this.handleChange}
@@ -149,7 +190,28 @@ class Signup extends Component {
               </div>
               <div className="row">
                 <div className="col-sm-2">
-                  <label><i className="fas fa-map-marked-alt fa-lg"></i></label>
+                  <label>
+                    <i className="fas fa-city fa-lg"></i>
+                  </label>
+                </div>
+                <div className="col-sm-10">
+                  <input
+                    value={this.state.password2}
+                    type="text"
+                    name="address"
+                    placeholder="Enter your City"
+>>>>>>> 31ec89f8c9b7bd88ae802586c04eca232d2997e5
+                    className="form-control"
+                    aria-describedby="emailHelp"
+                    onChange={this.handleChange}
+                  ></input>
+                </div>
+              </div>
+              <div className="row">
+                <div className="col-sm-2">
+                  <label>
+                    <i className="fas fa-map-marked-alt fa-lg"></i>
+                  </label>
                 </div>
                 <div className="col-sm-10">
                   <input
@@ -171,7 +233,7 @@ class Signup extends Component {
                   style={{ marginTop: "20px" }}
                 >
                   Sign-up
-                  </button>
+                </button>
               </div>
             </form>
           </div>
