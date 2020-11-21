@@ -10,8 +10,8 @@ import Home from "./container/dashboard";
 function App() {
   return (
     <Switch>
-      <Route path="/" exact component={Home}></Route>
       <Route path="/signPt" exact component={SignPt}></Route>
+      <Route path="/dashboard" exact component={Home}></Route>
       <Route path="/signDoc" exact component={SignupDoc}></Route>
       <Route path="/loginDoc" exact component={LoginDoc}></Route>
       <Route path="/loginPt" exact component={LoginPt}></Route>

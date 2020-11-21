@@ -13,6 +13,9 @@ const User = require("../../models/user");
 // Load Doctor model
 const Doc = require("../../models/doc");
 
+//Load Med model
+const Med = require("../../models/med");
+
 // @route POST api/users/register
 // @desc Register user
 // @access Public
@@ -119,6 +122,7 @@ router.post("/registerDoc", (req, res) => {
         special: req.body.special,
         bio: req.body.bio,
         city: req.body.city,
+        state: req.body.state,
       });
       // Hash password before saving in database
       bcrypt.genSalt(10, (err, salt) => {
@@ -251,7 +255,39 @@ router.post("/contactPatient", (req, res) => {
 // Fetch All Doctors
 router.get("/allDoctors", (req, res) => {
   Doc.find({}, (err, doctors) => {
-    res.json(doctors);
+    if (err) {
+      console.log(err);
+    } else {
+      res.json(doctors);
+    }
+  });
+});
+// Get doctors based on the location
+router.post("/getDoctorsAtLocation", (req, res) => {
+  Doc.find({ city: req.body.city }, (err, doc) => {
+    if (err) {
+      console.log(err);
+    } else {
+      res.json(doc);
+    }
+  });
+});
+
+//Patient's med info
+router.post("/dashboard/profile", (req,res) => {
+  const newMed = new Med({
+    name: req.body.name,
+    email: req.body.email,
+    phone: req.body.phone,
+    age: req.body.age,
+    dob: req.body.dob,
+    city: req.body.city,
+    blood: req.body.blood,
+    address: req.body.address,
+    description: req.body.description,
+    emergencyName: req.body.emergencyName,
+    emergencyNum: req.body.emergencyNum,
+    gender: req.body.gender
   });
 });
 
