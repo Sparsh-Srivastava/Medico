@@ -40,11 +40,11 @@ const MedSchema = new Schema({
   },
   emergencyname: {
     type: String,
-    required: true
+    required: false
   },
   emergencynum: {
     type: Number,
-    required: true
+    required: false
   },
   gender: {
     type: String,

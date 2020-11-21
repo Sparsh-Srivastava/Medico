@@ -45,19 +45,19 @@ const landing = () => {
                     </div>
                 </div>
                 <div className="row align-items-center text-center features">
-                    <div class="card col-lg-2">
+                    <div class="card col-md-3">
                     <i class="fas fa-hands-helping fa-5x card-img-top"></i> 
                         <div class="card-body">
                             <h5 class="card-title">Card title Card title Card title </h5>
                         </div>
                     </div>
-                    <div class="card col-lg-2">
+                    <div class="card col-md-3">
                         <i class="fas fa-hands-helping fa-5x card-img-top"></i> 
                         <div class="card-body">
                             <h5 class="card-title">Card title Card title Card title</h5>
                         </div>
                     </div>
-                    <div class="card col-lg-2">
+                    <div class="card col-md-3">
                         <i class="fas fa-hands-helping fa-5x card-img-top"></i> 
                         <div class="card-body">
                             <h5 class="card-title">Card title Card title Card title</h5>
