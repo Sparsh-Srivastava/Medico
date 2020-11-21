@@ -30,7 +30,7 @@ class Signup extends Component {
       email: this.state.email,
       password: this.state.password,
       city: this.state.location,
-      password2: this.state.password
+      password2: this.state.password,
     })
       .then((res) => console.log("done"))
       .catch((err) => console.log(err));

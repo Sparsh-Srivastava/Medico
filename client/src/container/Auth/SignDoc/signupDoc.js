@@ -177,15 +177,15 @@ class Signup extends Component {
                     <div className="row">
                       <div className="col-sm-2">
                         <label>
-                          <i className="fas fa-phone-alt fa-lg"></i>
+                          <i class="fas fa-check-circle fa-lg"></i>
                         </label>
                       </div>
                       <div className="col-sm-10">
                         <input
                           value={this.state.password2}
                           name="phone"
-                          type="Number"
-                          placeholder="Enter your Phone No"
+                          type="password"
+                          placeholder="Re-Enter your Password"
                           className="form-control"
                           aria-describedby="emailHelp"
                           onChange={this.handleChange}
@@ -195,7 +195,7 @@ class Signup extends Component {
                     <div className="row">
                       <div className="col-sm-2">
                         <label>
-                          <i className="fas fa-city fa-lg"></i>
+                          <i className="fas fa-map-marked-alt fa-lg"></i>
                         </label>
                       </div>
                       <div className="col-sm-10">
