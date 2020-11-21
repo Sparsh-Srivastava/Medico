@@ -248,7 +248,7 @@ class Signup extends Component {
                         ></input>
                       </div>
                     </div>
-                    
+
                     <div className="row">
                       <div className="col-sm-2">
                         <label>
@@ -269,7 +269,7 @@ class Signup extends Component {
                     </div>
                   </div>
                   <div className="carousel-item">
-                  <div className="row">
+                    <div className="row">
                       <div className="col-sm-2">
                         <label>
                           <i className="fas fa-map-marked-alt fa-lg"></i>
