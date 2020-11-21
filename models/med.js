@@ -5,12 +5,10 @@ const MedSchema = new Schema({
   name: {
     type: String,
     required: true,
-    ref: 'User'
   },
   email: {
     type: String,
     required: true,
-    ref: 'User'
   },
   phone: {
     type: Number,
@@ -27,7 +25,6 @@ const MedSchema = new Schema({
   city: {
     type: String,
     required: true,
-    ref: 'User'
   },
   blood: {
     type: String,
