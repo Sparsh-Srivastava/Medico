@@ -53,30 +53,6 @@ body .signupPt{
   background-color: #4c42dd;
   border-color: #4c42dd;
 }
-.signupPt .carousel-control-prev-icon,
-.signupPt .carousel-control-next-icon {
-  height: 100px;
-  width: 100px;
-  background-size: 100%, 100%;
-  background-image: none;
-}
-
-.signupPt .carousel-control-next-icon:after
-{
-  content: '⇨';
-  font-size: 55px;
-  color: #6861ca;
-}
-
-.signupPt .carousel-control-prev-icon:after {
-  content: '⇦';
-  font-size: 55px;
-  color: #6861ca;
-}
-.signupPt .carousel-control-next,.carousel-control-prev{
-  top:auto;
-  bottom: auto;
-}
 .signupPt textarea{
   width: 100%;
   margin-top: 2%;
