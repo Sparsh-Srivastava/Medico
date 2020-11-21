@@ -7,43 +7,55 @@ import DoctorView from "./DoctorView/DoctorView";
 /* import DoctorView from './DoctorView/DoctorView' */
 const Home = () => {
   const [Doctors, updateDoctor] = useState([]);
+  const [patient, updatePatient] = useState([]);
 
   const DoctorList = async () => {
     await Axios.get("http://localhost:5000/allDoctors")
       .then((res) => updateDoctor(res.data))
       .catch((err) => console.log(err));
   };
+  const patientId = localStorage.getItem("patientId");
+
+  const PatientInfo = async () => {
+    await Axios.get("http://localhost:5000/getPatientInfo", { patientId })
+      .then((res) => {
+        if (res.data._id === patientId) {
+          res.data.updatePatient(res.data);
+        }
+      })
+      .catch((err) => console.log(err));
+  };
 
   useEffect((e) => {
+    PatientInfo();
     DoctorList();
   }, []);
 
   let DoctorCard = Doctors.map((data) => {
     return (
-      <div className="allDocInfo card-body" key={data._id}>
-        <div className="card rounded shadow-lg docInfo">
-          <div className="card-header text-center">
-            <h3>{data.name}</h3>
+      <div className="card rounded shadow-lg docInfo" key={data._id}>
+        <div className="card-header text-center">
+          <h3>{data.name}</h3>
+        </div>
+        <div className="card-body">
+          <h5 className="card-title">{data.special}</h5>
+          <p className="card-text">{data.bio}</p>
+          <p className="card-text docState">{data.city}</p>
+        </div>
+        <div className="row">
+          <div className="col-lg-6">
+            <Link
+              to="/doctorView"
+              onClick={() => localStorage.setItem("id", data._id)}
+              className="btn rounded btn-primary profile"
+            >
+              Profile
+            </Link>
           </div>
-          <div className="card-body">
-            <h5 className="card-title">{data.special}</h5>
-            <p className="card-text">{data.bio}</p>
-            <p className="card-text docState">{data.city}</p>
-          </div>
-          <div className="row">
-            <div className="col-lg-6">
-              <Link
-                to="/doctorView"
-                onClick={() => localStorage.setItem("id", data._id)}
-              >
-                Profile
-              </Link>
-            </div>
-            <div className="col-lg-6">
-              <a href="#" className="btn rounded btn-info chat">
-                Chat With the Doctor
-              </a>
-            </div>
+          <div className="col-lg-6">
+            <a href="#" className="btn rounded btn-info chat">
+              Chat With the Doctor
+            </a>
           </div>
         </div>
       </div>
@@ -83,10 +95,6 @@ const Home = () => {
       </nav>
       <div className="row">
         <div className="col-lg-9">
-          <div className=" card rounded shadow-lg">
-            <h1 className="text-center sticky-top card-header">Recommended </h1>
-            {DoctorCard}
-          </div>
           <div className="patientInfo rounded  shadow-lg">
             <div className="card rounded">
               <div className="card-header text-center">
@@ -112,6 +120,10 @@ const Home = () => {
                 </div>
               </div>
             </div>
+          </div>
+          <div className=" card rounded shadow-lg">
+            <h1 className="text-center sticky-top card-header">Recommended </h1>
+            <div className="allDocInfo card-body">{DoctorCard}</div>
           </div>
         </div>
         <div className="col-lg-3">
