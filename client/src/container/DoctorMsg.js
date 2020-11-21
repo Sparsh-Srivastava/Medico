@@ -25,6 +25,20 @@ const DoctorMsg = () => {
       });
   };
 
+  const sendMessageToPatient = async (doc, pat) => {
+    await Axios.post("http://localhost:5000/contactPatient", {
+      doctorId: doc,
+      patientId: pat,
+      replyMessage: "Pitega Bohot Tu",
+    })
+      .then((res) => {
+        console.log("Done");
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
   useEffect((e) => {
     fetchMsg();
   }, []);
@@ -49,7 +63,11 @@ const DoctorMsg = () => {
           >
             Medical Report
           </a>
-          <a href="#" class="btn btn-primary">
+          <a
+            href="#"
+            class="btn btn-primary"
+            onClick={() => sendMessageToPatient(data.doctorId, data.patientId)}
+          >
             Reply
           </a>
         </div>
