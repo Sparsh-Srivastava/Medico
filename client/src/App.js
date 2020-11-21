@@ -10,7 +10,7 @@ import Home from "./container/dashboard";
 import main from "./container/Landing/landing";
 import DoctorView from "./container/DoctorView/DoctorView";
 import DoctorMsg from "./container/DoctorMsg";
-import Med from "./container/med/med";
+import PatientInfoForm from './component/PatientInfo/PatientInfoForm'
 function App() {
   return (
     <Switch>
@@ -21,6 +21,7 @@ function App() {
       <Route path="/signDoc" exact component={SignupDoc}></Route>
       <Route path="/loginDoc" exact component={LoginDoc}></Route>
       <Route path="/loginPt" exact component={LoginPt}></Route>
+      <Route path='/patientInfoForm' exact component={PatientInfoForm} />
       <Route path="/doctorMsg" exact component={DoctorMsg}></Route>
       <Route path="/med" exact component={Med}></Route> 
     </Switch>
