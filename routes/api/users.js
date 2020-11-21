@@ -273,8 +273,8 @@ router.post("/getDoctorsAtLocation", (req, res) => {
 });
 
 // Get Patient Information
-router.get("/getPatientInfo", (req, res) => {
-  User.find({}, (err, doctors) => {
+router.post("/getPatientInfo", (req, res) => {
+  User.findById(req.body.patientId, (err, doctors) => {
     if (err) {
       console.log(err);
     } else {
