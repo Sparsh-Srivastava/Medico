@@ -22,6 +22,10 @@ const UserSchema = new Schema({
     type: Date,
     default: Date.now,
   },
+  medicalDetails: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "meds",
+  },
   city: {
     type: String,
     required: true,

@@ -15,6 +15,7 @@ const Doc = require("../../models/doc");
 
 //Load Med model
 const Med = require("../../models/med");
+const e = require("express");
 
 // @route POST api/users/register
 // @desc Register user
@@ -294,75 +295,69 @@ router.post("/getDoctorInfo", (req, res) => {
 });
 
 //Patient's med info
-
 router.post("/profile", (req, res) => {
-  const body = req.body
-
-  if (!body) {
-      return res.status(400).json({
-          success: false,
-          error: 'You must provide a movie',
-      })
-  }
-
-  const newMed = new Med({
-    name: body.name,
-    email: body.email,
-    phone: body.phone,
-    age: body.age,
-    dob: body.dob,
-    city: body.city,
-    blood: body.blood,
-    address: body.address,
-    description: body.description,
-    emergencyName: body.emergencyName,
-    emergencyNum: body.emergencyNum,
-    gender: body.gender,
+  let newMed = new Med({
+    name: req.body.name,
+    email: req.body.email,
+    phone: req.body.phone,
+    age: req.body.age,
+    dob: req.body.dob,
+    city: req.body.city,
+    blood: req.body.blood,
+    address: req.body.address,
+    description: req.body.description,
+    emergencyName: req.body.emergencyName,
+    emergencyNum: req.body.emergencyNum,
+    gender: req.body.gender,
   });
 
   if (!newMed) {
-      return res.status(400).json({ success: false, error: err })
+    return res.status(400).json({
+      success: false,
+      error: "You must provide data",
+    });
   }
 
-  newMed
-      .save()
-      .then(() => {
-          return res.status(201).json({
-              success: true,
-              id: movie._id,
-              message: 'Movie created!',
-          })
-      })
-      .catch(error => {
-          return res.status(400).json({
-              error,
-              message: 'Movie not created!',
-          })
-      })
+  if (!newMed) {
+    return res.status(400).json({ success: false, error: err });
+  }
+
+  User.findById(req.body.id, (err, user) => {
+    if (err) {
+      console.log(err);
+    } else {
+      user.medicalDetails = newMed;
+      user
+        .save()
+        .then((med) => {
+          console.log(med);
+        })
+        .catch((err) => {
+          console.log("Error");
+        });
+    }
+  });
+
+  // newMed
+  //   .save()
+  //   .then((med) => {
+  //     res.json(med);
+  //   })
+  //   .catch((error) => {
+  //     res.json("Message not saved");
+  //   });
 });
 
-// router.post("/profile", async (req, res) => { 
-//   try {
-//     const newMed = new Med({
-//       name: req.body.name,
-//       email: req.body.email,
-//       phone: req.body.phone,
-//       age: req.body.age,
-//       dob: req.body.dob,
-//       city: req.body.city,
-//       blood: req.body.blood,
-//       address: req.body.address,
-//       description: req.body.description,
-//       emergencyName: req.body.emergencyName,
-//       emergencyNum: req.body.emergencyNum,
-//       gender: req.body.gender,
+// router.post("/check", (req, res) => {
+//   let id = "5fb906db18dd191f4ae843f2";
+//   User.findOne({ name: req.body.name })
+//     .populate("users.medicalDetails")
+//     .then(function (user) {
+//       console.log(user);
+//     })
+//     .catch((err) => {
+//       console.log(err);
 //     });
-//       const msg = await newMed.find();
-              
-//       res.status(200).json(msg);
-//   } catch (error) {
-//       res.status(404).json({ message: error.message });
-//   }
 // });
 
 module.exports = router;
