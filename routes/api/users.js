@@ -89,7 +89,7 @@ router.post("/login", (req, res) => {
           (err, token) => {
             res.json({
               success: true,
-              id: user.id + "id",
+              id: user.id,
               token: "Bearer " + token,
             });
           }
@@ -273,12 +273,12 @@ router.post("/getDoctorsAtLocation", (req, res) => {
 });
 
 // Get Patient Information
-router.post("/getPatientInfo", (req, res) => {
-  User.findById(req.body.id, (err, user) => {
+router.get("/getPatientInfo", (req, res) => {
+  User.find({}, (err, doctors) => {
     if (err) {
       console.log(err);
     } else {
-      res.json(user);
+      res.json(doctors);
     }
   });
 });
