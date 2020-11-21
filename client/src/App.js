@@ -6,7 +6,7 @@ import SignupDoc from "./container/Auth/SignDoc/signupDoc";
 import SignPt from "./container/Auth/SignPt/signupPt";
 import LoginDoc from "./container/Auth/LoginDoc/loginDoc";
 import LoginPt from "./container/Auth/LoginPt/loginPt";
-import Home from "./container/Home";
+import Home from "./container/dashboard";
 function App() {
   return (
     <Switch>

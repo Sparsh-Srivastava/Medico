@@ -1,0 +1,118 @@
+.home{
+    overflow-x: hidden;
+    background-color: #dae8ff;
+}
+.home .card{
+    border-width: 0;
+}
+.home *{
+    box-sizing: border-box;
+}
+.home .patientInfo > .card{
+    height: auto;
+}
+.home .col-lg-9 .card{
+    padding-bottom: 2%;
+}
+.home .col-lg-3 {
+    padding: 2% 3%;
+}
+.home .col-lg-3 > .card{
+    height: 120vh;
+
+}
+.home .allDocInfo{
+    height: 60vh;
+    overflow-y: scroll;
+}
+.home .col-lg-3 .card-header{
+    background-color: #2d6187;
+    color: whitesmoke;
+    border-radius: 0 !important;
+    border-top-left-radius: 16px !important;
+    border-top-right-radius: 16px !important;
+}
+.home .col-lg-9 > .card > .card-header,.home .col-lg-9 > .patientInfo > .card > .card-header{
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    background-color: #2d6187;
+    color: whitesmoke;
+}
+.home .col-lg-9 > .patientInfo > .card > .card-body > .row{    
+    margin:1% 0;
+}
+h1.text-center{
+    margin-bottom: 3%;
+}
+.home > .row > .col-lg-9{
+    padding: 2% 3%;
+}
+.home .rounded{
+    border-radius: 16px;
+}
+.home .col-lg-9 > .card{
+    margin-bottom: 5%;
+}
+.home .col-lg-9 > .card > .allDocInfo >  .card{
+    background-color: #394867;
+    color: #f1f6f9;
+    border-width: 0;
+}
+.home .col-lg-9 > .card > .allDocInfo > .card > .row{
+    width: 100%;
+    margin: 0;
+}
+.home .col-lg-9 > .card > .allDocInfo > .card > .card-header{
+    background-color: #14274e;
+    color: #f1f6f9;
+    border-radius: 16px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+.home .col-lg-9 > .card > .allDocInfo > .card > .card-body{
+    border-radius: 16px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+.home .col-lg-9 > .card > .allDocInfo > .card > .row .btn{
+    display: block;
+}
+.home .col-lg-9 > .card > .allDocInfo > .card > .row > .col-lg-6{
+    padding: 0%;
+}
+.home .docState{
+    text-align: right;
+    text-transform: uppercase;
+}
+.home .btn.profile{
+    border-radius: 0% !important;
+    border-bottom-left-radius:16px  !important;
+    font-weight: 600;
+}
+.home .btn.chat{
+    font-weight: 600;
+    color: white;
+    border-color: #138496;
+    background-color: #138496;
+    border-radius: 0% !important;
+    border-bottom-right-radius:16px  !important;
+}
+.home .btn.chat:hover{
+    border-color: #0f6c7a;
+    background-color: #0f6c7a;
+}
+.home .docInfo{
+    margin: 2%;
+}
+.home .carousel-inner h5{
+    line-height:50vh;
+}
+@media (max-width:1050px){
+    .home .col-lg-3{
+        display: none;
+    }
+    .home .col-lg-9 > .card,.home .col-lg-9 .patientInfo .card{
+        width: 94vw;
+        margin:5% 2%;
+    }
+}
