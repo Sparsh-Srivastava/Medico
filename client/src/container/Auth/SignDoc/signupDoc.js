@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Redirect, Link } from "react-router-dom";
 
-import img from "./undraw_sign_in_e6hj.svg"
+import img from "./undraw_sign_in_e6hj.svg";
 import "./signupDoc.css";
 import Axios from "axios";
 import { localsName } from "ejs";
@@ -17,7 +17,7 @@ class Signup extends Component {
       password: "",
       name: "",
       // phone: "",
-      // address: "",
+      address: "",
       location: "",
       // valid: false,
       // userId: "",
@@ -29,13 +29,13 @@ class Signup extends Component {
       name: this.state.name,
       email: this.state.email,
       password: this.state.password,
-      city: this.state.location,
+      city: this.state.address,
+      state: this.state.location,
       password2: this.state.password,
       special: this.state.special,
-      bio: this.state.bio
+      bio: this.state.bio,
     })
-      .then((res) =>
-        console.log('done'))
+      .then((res) => console.log("done"))
 
       .catch((err) => console.log(err));
   };
@@ -54,27 +54,53 @@ class Signup extends Component {
     return (
       <div className="signupDoc">
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-          <a className="navbar-brand" href="#">Navbar</a>
-          <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <a className="navbar-brand" href="#">
+            Navbar
+          </a>
+          <button
+            className="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
             <span className="navbar-toggler-icon"></span>
           </button>
 
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav ml-auto">
               <li className="nav-item">
-                <a className="nav-link" href="/#">Home <span className="sr-only">(current)</span></a>
+                <a className="nav-link" href="/#">
+                  Home <span className="sr-only">(current)</span>
+                </a>
               </li>
               <li className="nav-item dropdown">
-                <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a
+                  className="nav-link dropdown-toggle"
+                  href="#"
+                  id="navbarDropdown"
+                  role="button"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                >
                   Log In
-              </a>
+                </a>
                 <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <a className="dropdown-item" href="/loginDoc">As a Doctor</a>
-                  <a className="dropdown-item" href="/loginPt">As a Patient</a>
+                  <a className="dropdown-item" href="/loginDoc">
+                    As a Doctor
+                  </a>
+                  <a className="dropdown-item" href="/loginPt">
+                    As a Patient
+                  </a>
                 </div>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="/#">Contact Us <span className="sr-only"></span></a>
+                <a className="nav-link" href="/#">
+                  Contact Us <span className="sr-only"></span>
+                </a>
               </li>
             </ul>
           </div>
@@ -86,13 +112,19 @@ class Signup extends Component {
           <div className="col-lg-4 shadow-lg text-center rounded">
             <h4> Sign-Up for Doctor</h4>
             <form>
-              <div id="carouselExampleIndicators" className="carousel slide" data-ride="carousel" data-interval="false">
-
+              <div
+                id="carouselExampleIndicators"
+                className="carousel slide"
+                data-ride="carousel"
+                data-interval="false"
+              >
                 <div className="carousel-inner">
                   <div className="carousel-item active">
                     <div className="row">
                       <div className="col-sm-2">
-                        <label><i className="fas fa-signature fa-lg"></i></label>
+                        <label>
+                          <i className="fas fa-signature fa-lg"></i>
+                        </label>
                       </div>
                       <div className="col-sm-10">
                         <input
@@ -108,7 +140,9 @@ class Signup extends Component {
                     </div>
                     <div className="row">
                       <div className="col-sm-2">
-                        <label htmlFor="exampleInputEmail1"><i className="fas fa-envelope fa-lg"></i></label>
+                        <label htmlFor="exampleInputEmail1">
+                          <i className="fas fa-envelope fa-lg"></i>
+                        </label>
                       </div>
                       <div className="col-sm-10">
                         <input
@@ -124,7 +158,9 @@ class Signup extends Component {
                     </div>
                     <div className="row">
                       <div className="col-sm-2">
-                        <label><i className="fas fa-key fa-lg"></i></label>
+                        <label>
+                          <i className="fas fa-key fa-lg"></i>
+                        </label>
                       </div>
                       <div className="col-sm-10">
                         <input
@@ -140,7 +176,9 @@ class Signup extends Component {
                     </div>
                     <div className="row">
                       <div className="col-sm-2">
-                        <label><i className="fas fa-phone-alt fa-lg"></i></label>
+                        <label>
+                          <i className="fas fa-phone-alt fa-lg"></i>
+                        </label>
                       </div>
                       <div className="col-sm-10">
                         <input
@@ -156,7 +194,9 @@ class Signup extends Component {
                     </div>
                     <div className="row">
                       <div className="col-sm-2">
-                        <label><i className="fas fa-city fa-lg"></i></label>
+                        <label>
+                          <i className="fas fa-city fa-lg"></i>
+                        </label>
                       </div>
                       <div className="col-sm-10">
                         <input
@@ -172,7 +212,9 @@ class Signup extends Component {
                     </div>
                     <div className="row">
                       <div className="col-sm-2">
-                        <label><i className="fas fa-map-marked-alt fa-lg"></i></label>
+                        <label>
+                          <i className="fas fa-map-marked-alt fa-lg"></i>
+                        </label>
                       </div>
                       <div className="col-sm-10">
                         <input
@@ -190,7 +232,9 @@ class Signup extends Component {
                   <div className="carousel-item">
                     <div className="row">
                       <div className="col-sm-2">
-                        <label><i className="fas fa-user-md fa-lg"></i></label>
+                        <label>
+                          <i className="fas fa-user-md fa-lg"></i>
+                        </label>
                       </div>
                       <div className="col-sm-10">
                         <input
@@ -206,27 +250,47 @@ class Signup extends Component {
                     </div>
                     <div className="row">
                       <div className="col-sm-2">
-                        <label><i className="fas fa-info-circle fa-lg"></i></label>
+                        <label>
+                          <i className="fas fa-info-circle fa-lg"></i>
+                        </label>
                       </div>
                       <div className="col-sm-10">
-                        <textarea placeholder="Enter Bio" rows="8" 
-                        value={this.state.bio}
-                        name="bio"
-                        type="bio"
-                        className="form-control"
-                        aria-describedby="emailHelp"
-                        onChange={this.handleChange}
+                        <textarea
+                          placeholder="Enter Bio"
+                          rows="8"
+                          value={this.state.bio}
+                          name="bio"
+                          type="bio"
+                          className="form-control"
+                          aria-describedby="emailHelp"
+                          onChange={this.handleChange}
                         />
                       </div>
                     </div>
                   </div>
                 </div>
-                <a className="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                  <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+                <a
+                  className="carousel-control-prev"
+                  href="#carouselExampleIndicators"
+                  role="button"
+                  data-slide="prev"
+                >
+                  <span
+                    className="carousel-control-prev-icon"
+                    aria-hidden="true"
+                  ></span>
                   <span className="sr-only">Previous</span>
                 </a>
-                <a className="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                  <span className="carousel-control-next-icon" aria-hidden="true"></span>
+                <a
+                  className="carousel-control-next"
+                  href="#carouselExampleIndicators"
+                  role="button"
+                  data-slide="next"
+                >
+                  <span
+                    className="carousel-control-next-icon"
+                    aria-hidden="true"
+                  ></span>
                   <span className="sr-only">Next</span>
                 </a>
               </div>
@@ -239,7 +303,7 @@ class Signup extends Component {
                   style={{ marginTop: "20px" }}
                 >
                   Sign-up
-                  </button>
+                </button>
               </div>
             </form>
           </div>
