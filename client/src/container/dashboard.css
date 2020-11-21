@@ -101,6 +101,11 @@ h1.text-center{
     border-color: #0f6c7a;
     background-color: #0f6c7a;
 }
+.home .subBtn{
+    border-radius: 0%;
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
+}
 .home .docInfo{
     margin: 2%;
 }
