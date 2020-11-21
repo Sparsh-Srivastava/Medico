@@ -116,3 +116,31 @@ h1.text-center{
         margin:5% 2%;
     }
 }
+@media (max-width:1000px){
+    .home .allDocInfo{
+        height: 70vh;
+    }
+    .home .col-lg-9 > .card,.home .col-lg-9 .patientInfo .card{
+        width: 90vw;
+        margin:4%;
+    }
+    .home h1{
+        font-size: 2rem;
+    }
+    .home .col-lg-9 > .card > .allDocInfo > .card > .row .btn{
+        border-radius: 0% !important;
+    }
+    .home .col-lg-9 > .card > .allDocInfo > .card > .row .btn.chat{
+        border-bottom-left-radius: 16px !important;
+        border-bottom-right-radius: 16px !important;
+    }
+    .home .col-lg-9 > .card > .allDocInfo > .card {
+        margin-bottom: 10%;
+    }
+}
+@media (max-width:600px){
+    .home .col-lg-9 > .card,.home .col-lg-9 .patientInfo .card{
+        width: 90vw;
+        margin:5%;
+    }
+}
