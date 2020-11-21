@@ -16,11 +16,11 @@ class Signup extends Component {
       email: "",
       password: "",
       name: "",
-      phone: "",
-      address: "",
+      // phone: "",
+      // address: "",
       location: "",
-      valid: false,
-      userId: "",
+      // valid: false,
+      // userId: "",
     };
   }
   signup = async (e) => {
@@ -30,6 +30,9 @@ class Signup extends Component {
       email: this.state.email,
       password: this.state.password,
       city: this.state.location,
+      password2: this.state.password,
+      special: this.state.special,
+      bio: this.state.bio
     })
       .then((res) =>
         console.log('done'))
@@ -141,7 +144,7 @@ class Signup extends Component {
                       </div>
                       <div className="col-sm-10">
                         <input
-                          value={this.state.phone}
+                          value={this.state.password2}
                           name="phone"
                           type="Number"
                           placeholder="Enter your Phone No"
@@ -191,9 +194,9 @@ class Signup extends Component {
                       </div>
                       <div className="col-sm-10">
                         <input
-                          value={this.state.password}
-                          name="password"
-                          type="password"
+                          value={this.state.special}
+                          name="special"
+                          type="special"
                           placeholder="Enter Speciality "
                           className="form-control"
                           aria-describedby="emailHelp"
@@ -206,7 +209,14 @@ class Signup extends Component {
                         <label><i className="fas fa-info-circle fa-lg"></i></label>
                       </div>
                       <div className="col-sm-10">
-                        <textarea placeholder="Enter Bio" rows="8" />
+                        <textarea placeholder="Enter Bio" rows="8" 
+                        value={this.state.bio}
+                        name="bio"
+                        type="bio"
+                        className="form-control"
+                        aria-describedby="emailHelp"
+                        onChange={this.handleChange}
+                        />
                       </div>
                     </div>
                   </div>
