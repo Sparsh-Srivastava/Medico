@@ -73,7 +73,7 @@ body .signupDoc{
   font-size: 55px;
   color: #6861ca;
 }
-.signupDoc .carousel-control-next,.carousel-control-prev{
+.signupDoc .carousel-control-next,.signupDoc .carousel-control-prev{
   top:auto;
   bottom: auto;
 }
