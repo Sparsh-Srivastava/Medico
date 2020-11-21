@@ -296,8 +296,6 @@ router.post("/getDoctorInfo", (req, res) => {
 
 //Patient's med info
 router.post("/profile", (req, res) => {
-  // const body = req.body
-
   let newMed = new Med({
     name: req.body.name,
     email: req.body.email,

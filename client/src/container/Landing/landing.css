@@ -1,8 +1,6 @@
 .landing{
     overflow-x: hidden;
 }
-.landing .landingTitle{
-}
 .landing .landingTitle .col-lg-8{
     padding: 4% 5%;
 }
@@ -19,8 +17,8 @@
     width: 100vw;
     color: white;
 }
-.landing .landingTitle .col-lg-2{
-    margin:2% 8%;
+.landing .landingTitle .col-md-3{
+    margin:2% 4%;
     border-width: 0;
     background-color: #FF4F5A;
 }
@@ -37,4 +35,20 @@
     height: 20vh;
     background-color: #343A40;
     color: white;
+}
+@media (max-width:600px){
+    .landing .row{
+        margin: 0;
+    }
+    .landing h3{
+        font-size: 20px;
+    }
+    .landing .aboutUs, .landing .siteDesc{
+        font-size: 16px;
+        margin: 5%;
+    }
+    .landing .features{
+        padding: 10%;
+        padding-bottom: 4%;
+    }
 }
