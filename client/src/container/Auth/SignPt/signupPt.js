@@ -16,11 +16,11 @@ class Signup extends Component {
       email: "",
       password: "",
       name: "",
-      phone: "",
-      address: "",
+      // phone: "",
+      // address: "",
       location: "",
-      valid: false,
-      userId: "",
+      // valid: false,
+      // userId: "",
     };
   }
   signup = async (e) => {
@@ -30,6 +30,7 @@ class Signup extends Component {
       email: this.state.email,
       password: this.state.password,
       city: this.state.location,
+      password2: this.state.password
     })
       .then((res) =>
         console.log('done'))
@@ -152,7 +153,7 @@ class Signup extends Component {
                 </div>
                 <div className="col-sm-10">
                   <input
-                    value={this.state.address}
+                    value={this.state.password2}
                     type="text"
                     name="address"
                     placeholder="Enter your City"

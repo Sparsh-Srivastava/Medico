@@ -9,7 +9,11 @@ const users = require("./routes/api/users");
 
 const app = express();
 
-app.use(cors());
+app.use(
+  cors({
+    origin: "http://localhost:3000",
+  })
+);
 
 // Bodyparser middleware
 app.use(
