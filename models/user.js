@@ -2,6 +2,10 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 // Create Schema
 const UserSchema = new Schema({
+  medDetailes: { 
+    type: Schema.Types.ObjectId, 
+    ref: 'med' 
+  },
   name: {
     type: String,
     required: true,
@@ -17,6 +21,10 @@ const UserSchema = new Schema({
   date: {
     type: Date,
     default: Date.now,
+  },
+  medicalDetails: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "meds",
   },
   city: {
     type: String,

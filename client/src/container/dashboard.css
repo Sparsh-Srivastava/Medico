@@ -1,6 +1,6 @@
 .home{
     overflow-x: hidden;
-    background-color: #dae8ff;
+    background-color: #fcdddf;
 }
 .home .card{
     border-width: 0;
@@ -22,10 +22,11 @@
 
 }
 .home .allDocInfo{
+    height: 60vh;
     overflow-y: scroll;
 }
 .home .col-lg-3 .card-header{
-    background-color: #2d6187;
+    background-color: #FF4F5A;
     color: whitesmoke;
     border-radius: 0 !important;
     border-top-left-radius: 16px !important;
@@ -34,7 +35,7 @@
 .home .col-lg-9 > .card > .card-header,.home .col-lg-9 > .patientInfo > .card > .card-header{
     border-top-left-radius: 16px;
     border-top-right-radius: 16px;
-    background-color: #2d6187;
+    background-color: #FF4F5A;
     color: whitesmoke;
 }
 .home .col-lg-9 > .patientInfo > .card > .card-body > .row{    
@@ -49,12 +50,12 @@ h1.text-center{
 .home .rounded{
     border-radius: 16px;
 }
-.home .col-lg-9 > .card{
+.home .col-lg-9 > .patientInfo{
     margin-bottom: 5%;
 }
 .home .col-lg-9 > .card > .allDocInfo >  .card{
-    background-color: #394867;
-    color: #f1f6f9;
+    background-color: #fcdddf;
+    color: #000000;
     border-width: 0;
 }
 .home .col-lg-9 > .card > .allDocInfo > .card > .row{
@@ -62,7 +63,7 @@ h1.text-center{
     margin: 0;
 }
 .home .col-lg-9 > .card > .allDocInfo > .card > .card-header{
-    background-color: #14274e;
+    background-color: #fc7d86;
     color: #f1f6f9;
     border-radius: 16px;
     border-bottom-left-radius: 0;

@@ -8,10 +8,12 @@ import LoginDoc from "./container/Auth/LoginDoc/loginDoc";
 import LoginPt from "./container/Auth/LoginPt/loginPt";
 import Home from "./container/dashboard";
 import main from "./container/Landing/landing";
+import DoctorView from "./container/DoctorView/DoctorView";
 function App() {
   return (
     <Switch>
       <Route path="/" exact component={main}></Route>
+      <Route path='/doctorView' component={DoctorView} />
       <Route path="/signPt" exact component={SignPt}></Route>
       <Route path="/dashboard" exact component={Home}></Route>
       <Route path="/signDoc" exact component={SignupDoc}></Route>

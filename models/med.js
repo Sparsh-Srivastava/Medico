@@ -4,52 +4,52 @@ const Schema = mongoose.Schema;
 const MedSchema = new Schema({
   name: {
     type: String,
-    required: true,
+    // required: true,
   },
   email: {
     type: String,
-    required: true,
+    // required: true,
   },
   phone: {
     type: Number,
-    required: true
+    // required: true,
   },
   age: {
     type: Number,
-    required: true
+    // required: true,
   },
   dob: {
-    type: Date,
-    required: true
+    type: String,
+    // required: true,
   },
   city: {
     type: String,
-    required: true,
+    // required: true,
   },
   blood: {
     type: String,
-    required: true
+    // required: true,
   },
   address: {
     type: String,
-    required: true
+    // required: true,
   },
   desciption: {
     type: String,
-    required: true
+    // required: true,
   },
   emergencyname: {
     type: String,
-    required: true
+    // required: true,
   },
   emergencynum: {
     type: Number,
-    required: true
+    // required: true,
   },
   gender: {
     type: String,
-    required: true
-  }
+    // required: true,
+  },
 });
 
 module.exports = Med = mongoose.model("meds", MedSchema);
