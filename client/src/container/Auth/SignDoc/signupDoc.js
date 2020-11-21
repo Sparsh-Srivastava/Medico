@@ -248,23 +248,7 @@ class Signup extends Component {
                         ></input>
                       </div>
                     </div>
-                    <div className="row">
-                      <div className="col-sm-2">
-                        <label>
-                          <i className="fas fa-map-marked-alt fa-lg"></i>
-                        </label>
-                      </div>
-                      <div className="col-sm-10">
-                        <Select
-                          label="category"
-                          name="location"
-                          options={options}
-                          onChange={this.handleChange2.bind(this)}
-                        />
-                      </div>
-                    </div>
-                  </div>
-                  <div className="carousel-item">
+
                     <div className="row">
                       <div className="col-sm-2">
                         <label>
@@ -281,6 +265,23 @@ class Signup extends Component {
                           aria-describedby="emailHelp"
                           onChange={this.handleChange}
                         ></input>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="carousel-item">
+                    <div className="row">
+                      <div className="col-sm-2">
+                        <label>
+                          <i className="fas fa-map-marked-alt fa-lg"></i>
+                        </label>
+                      </div>
+                      <div className="col-sm-10">
+                        <Select
+                          label="category"
+                          name="location"
+                          options={options}
+                          onChange={this.handleChange2.bind(this)}
+                        />
                       </div>
                     </div>
                     <div className="row">

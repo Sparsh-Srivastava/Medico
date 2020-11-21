@@ -1,47 +1,9 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import "./dashboard.css"
 import img from "./Auth/LoginDoc/undraw_authentication_fsn5 (2).svg"
-import Axios from 'axios';
 const Home = () => {
 
     const [Doctors, updateDoctor] = useState([]);
-    const doctorList = async () => {
-        await Axios.get('http://localhost:5000/allDoctors')
-            .then(res => updateDoctor(res.data))
-            .catch(err => console.log(err))
-    }
-
-
-
-    useEffect((e) => {
-        doctorList();
-    }, []);
-
-
-    let DoctorCard
-    DoctorCard = Doctors.map(data => {
-        return (<div key={data._id} className="allDocInfo card-body">
-            <div className="card rounded shadow-lg docInfo">
-                <div className="card-header text-center">
-                    <h3>{data.name}</h3>
-                </div>
-                <div className="card-body">
-                    <h5 className="card-title">{data.special}</h5>
-                    <p className="card-text">{data.bio}</p>
-                    <p className="card-text docState">{data.city}</p>
-                </div>
-                <div className="row">
-                    <div className="col-lg-6">
-                        <a href="#" className="btn rounded btn-primary profile">View Profile</a>
-                    </div>
-                    <div className="col-lg-6">
-                        <a href="#" className="btn rounded btn-info chat">Chat With the Doctor</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        )
-    })
 
     return (
         <div className="home">
@@ -62,7 +24,80 @@ const Home = () => {
                 <div className="col-lg-9">
                     <div className=" card rounded shadow-lg">
                         <h1 className="text-center sticky-top card-header">Recommended </h1>
-                        {DoctorCard}
+                        <div className="allDocInfo card-body">
+                            <div className="card rounded shadow-lg docInfo">
+                                <div className="card-header text-center">
+                                    <h3>Doctor1</h3>
+                                </div>
+                                <div className="card-body">
+                                    <h5 className="card-title">CARDIOLOGIST</h5>
+                                    <p className="card-text">accha ilaaz karuga ake toh dekho complain nhi ayi kabhi murdo se</p>
+                                    <p className="card-text docState">Rajasthan</p>
+                                </div>
+                                <div className="row">
+                                    <div className="col-lg-6">
+                                        <a href="#" className="btn rounded btn-primary profile">View Profile</a>
+                                    </div>
+                                    <div className="col-lg-6">
+                                        <a href="#" className="btn rounded btn-info chat">Chat With the Doctor</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="card rounded shadow-lg docInfo">
+                                <div className="card-header text-center">
+                                    <h3>Doctor1</h3>
+                                </div>
+                                <div className="card-body">
+                                    <h5 className="card-title">CARDIOLOGIST</h5>
+                                    <p className="card-text">accha ilaaz karuga ake toh dekho complain nhi ayi kabhi murdo se</p>
+                                    <p className="card-text docState">Rajasthan</p>
+                                </div>
+                                <div className="row">
+                                    <div className="col-lg-6">
+                                        <a href="#" className="btn rounded btn-primary profile">View Profile</a>
+                                    </div>
+                                    <div className="col-lg-6">
+                                        <a href="#" className="btn rounded btn-info chat">Chat With the Doctor</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="card rounded shadow-lg docInfo">
+                                <div className="card-header text-center">
+                                    <h3>Doctor1</h3>
+                                </div>
+                                <div className="card-body">
+                                    <h5 className="card-title">CARDIOLOGIST</h5>
+                                    <p className="card-text">accha ilaaz karuga ake toh dekho complain nhi ayi kabhi murdo se</p>
+                                    <p className="card-text docState">Rajasthan</p>
+                                </div>
+                                <div className="row">
+                                    <div className="col-lg-6">
+                                        <a href="#" className="btn rounded btn-primary profile">View Profile</a>
+                                    </div>
+                                    <div className="col-lg-6">
+                                        <a href="#" className="btn rounded btn-info chat">Chat With the Doctor</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="card rounded shadow-lg docInfo">
+                                <div className="card-header text-center">
+                                    <h3>Doctor1</h3>
+                                </div>
+                                <div className="card-body">
+                                    <h5 className="card-title">CARDIOLOGIST</h5>
+                                    <p className="card-text">accha ilaaz karuga ake toh dekho complain nhi ayi kabhi murdo se</p>
+                                    <p className="card-text docState">Rajasthan</p>
+                                </div>
+                                <div className="row">
+                                    <div className="col-lg-6">
+                                        <a href="#" className="btn rounded btn-primary profile">View Profile</a>
+                                    </div>
+                                    <div className="col-lg-6">
+                                        <a href="#" className="btn rounded btn-info chat">Chat With the Doctor</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div className="patientInfo rounded  shadow-lg">
                         <div className="card rounded">
@@ -122,5 +157,3 @@ const Home = () => {
     )
 }
 export default Home;
-
-// SP ,SD CITY,PHNO,A-CP

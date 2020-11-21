@@ -2,7 +2,7 @@ import React, { Component, useEffect } from "react";
 // import React, { Component} from "react";
 import { Route, Redirect, Link } from "react-router-dom";
 // import { Redirect, Link } from "react-router-dom";
-import img from "./undraw_secure_login_pdn4.svg"
+import img from "./undraw_secure_login_pdn4.svg";
 import "./loginPt.css";
 import Axios from "axios";
 class Login extends Component {
@@ -37,8 +37,15 @@ class Login extends Component {
       email: this.state.email,
       password: this.state.password,
     })
-      .then((res) =>
-        this.setState({ valid: res.data.token, userId: res.data.userId })
+      .then(
+        (res) => {
+          localStorage.setItem("patientId", res.data.id);
+          localStorage.setItem("isLoggedIn", res.data.success);
+          localStorage.setItem("patientToken", res.data.token);
+          console.log(res);
+        }
+        // this.setState({ valid: res.data.token, userId: res.data.userId })
+        // console.log(res)
       )
       .catch((err) => console.log(err));
 
@@ -62,27 +69,53 @@ class Login extends Component {
     return (
       <div className="logInPt">
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-          <a className="navbar-brand" href="#">Navbar</a>
-          <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <a className="navbar-brand" href="#">
+            Navbar
+          </a>
+          <button
+            className="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
             <span className="navbar-toggler-icon"></span>
           </button>
 
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav ml-auto">
               <li className="nav-item">
-                <a className="nav-link" href="/#">Home <span className="sr-only">(current)</span></a>
+                <a className="nav-link" href="/#">
+                  Home <span className="sr-only">(current)</span>
+                </a>
               </li>
               <li className="nav-item dropdown">
-                <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a
+                  className="nav-link dropdown-toggle"
+                  href="#"
+                  id="navbarDropdown"
+                  role="button"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                >
                   Sign-Up
-              </a>
+                </a>
                 <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <a className="dropdown-item" href="/signDoc">As a Doctor</a>
-                  <a className="dropdown-item" href="/signPt">As a Patient</a>
+                  <a className="dropdown-item" href="/signDoc">
+                    As a Doctor
+                  </a>
+                  <a className="dropdown-item" href="/signPt">
+                    As a Patient
+                  </a>
                 </div>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="/#">Contact Us <span className="sr-only"></span></a>
+                <a className="nav-link" href="/#">
+                  Contact Us <span className="sr-only"></span>
+                </a>
               </li>
             </ul>
           </div>
@@ -98,7 +131,9 @@ class Login extends Component {
                 <form>
                   <div className="row">
                     <div className="col-sm-2">
-                      <h6 className="head"><i className="fas fa-envelope fa-lg"></i></h6>
+                      <h6 className="head">
+                        <i className="fas fa-envelope fa-lg"></i>
+                      </h6>
                     </div>
                     <div className="col-sm-10">
                       <input
@@ -115,7 +150,9 @@ class Login extends Component {
                   </div>
                   <div className="row">
                     <div className="col-sm-2">
-                      <h6 className="head"><i className="fas fa-key fa-lg"></i></h6>
+                      <h6 className="head">
+                        <i className="fas fa-key fa-lg"></i>
+                      </h6>
                     </div>
                     <div className="col-sm-10">
                       <input
@@ -131,11 +168,15 @@ class Login extends Component {
                     </div>
                   </div>
                   <div>
-                    <button onClick={this.login} className="btn btn-primary logInPtBtn">
+                    <button
+                      onClick={this.login}
+                      className="btn btn-primary logInPtBtn"
+                    >
                       Log In
-                  </button>
+                    </button>
                   </div>
-                New User? Sign Up  as <Link to="/signDoc">Doctor</Link> or <Link to="/signPt">Patient</Link>
+                  New User? Sign Up as <Link to="/signDoc">Doctor</Link> or{" "}
+                  <Link to="/signPt">Patient</Link>
                 </form>
                 <p className="para">{this.state.errMessage}</p>
               </div>

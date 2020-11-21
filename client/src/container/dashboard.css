@@ -2,11 +2,17 @@
     overflow-x: hidden;
     background-color: #dae8ff;
 }
+.home .card{
+    border-width: 0;
+}
 .home *{
     box-sizing: border-box;
 }
 .home .patientInfo > .card{
     height: auto;
+}
+.home .col-lg-9 .card{
+    padding-bottom: 2%;
 }
 .home .col-lg-3 {
     padding: 2% 3%;
@@ -100,4 +106,13 @@ h1.text-center{
 }
 .home .carousel-inner h5{
     line-height:50vh;
+}
+@media (max-width:1050px){
+    .home .col-lg-3{
+        display: none;
+    }
+    .home .col-lg-9 > .card,.home .col-lg-9 .patientInfo .card{
+        width: 94vw;
+        margin:5% 2%;
+    }
 }

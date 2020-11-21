@@ -13,6 +13,9 @@ const User = require("../../models/user");
 // Load Doctor model
 const Doc = require("../../models/doc");
 
+//Load Med model
+const Med = require("../../models/med");
+
 // @route POST api/users/register
 // @desc Register user
 // @access Public
@@ -64,7 +67,7 @@ router.post("/login", (req, res) => {
   User.findOne({ email }).then((user) => {
     // Check if user exists
     if (!user) {
-      return res.status(404).json({ emailnotfound: "Email not found" });
+      return res.json({ error: "Email not found" });
     }
     // Check password
     bcrypt.compare(password, user.password).then((isMatch) => {
@@ -85,14 +88,13 @@ router.post("/login", (req, res) => {
           (err, token) => {
             res.json({
               success: true,
+              id: user.id + "id",
               token: "Bearer " + token,
             });
           }
         );
       } else {
-        return res
-          .status(400)
-          .json({ passwordincorrect: "Password incorrect" });
+        return res.json({ error: "Password incorrect" });
       }
     });
   });
@@ -152,7 +154,7 @@ router.post("/loginDoc", (req, res) => {
   Doc.findOne({ email }).then((doc) => {
     // Check if user exists
     if (!doc) {
-      return res.status(404).json({ emailnotfound: "Email not found" });
+      return res.json({ error: "Email not found" });
     }
     // Check password
     bcrypt.compare(password, doc.password).then((isMatch) => {
@@ -173,14 +175,13 @@ router.post("/loginDoc", (req, res) => {
           (err, token) => {
             res.json({
               success: true,
+              id: doc.id,
               token: "Bearer " + token,
             });
           }
         );
       } else {
-        return res
-          .status(400)
-          .json({ passwordincorrect: "Password incorrect" });
+        return res.json({ error: "Password incorrect" });
       }
     });
   });
@@ -267,6 +268,46 @@ router.post("/getDoctorsAtLocation", (req, res) => {
     } else {
       res.json(doc);
     }
+  });
+});
+
+// Get Patient Information
+router.post("/getPatientInfo", (req, res) => {
+  User.findById(req.body.id, (err, user) => {
+    if (err) {
+      console.log(err);
+    } else {
+      res.json(user);
+    }
+  });
+});
+
+// Get Doctor Information
+router.post("/getDoctorInfo", (req, res) => {
+  User.findById(req.body.id, (err, doc) => {
+    if (err) {
+      console.log(err);
+    } else {
+      res.json(doc);
+    }
+  });
+});
+
+//Patient's med info
+router.post("/dashboard/profile", (req, res) => {
+  const newMed = new Med({
+    name: req.body.name,
+    email: req.body.email,
+    phone: req.body.phone,
+    age: req.body.age,
+    dob: req.body.dob,
+    city: req.body.city,
+    blood: req.body.blood,
+    address: req.body.address,
+    description: req.body.description,
+    emergencyName: req.body.emergencyName,
+    emergencyNum: req.body.emergencyNum,
+    gender: req.body.gender,
   });
 });
 
