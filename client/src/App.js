@@ -23,6 +23,7 @@ function App() {
       <Route path="/loginPt" exact component={LoginPt}></Route>
       <Route path='/patientInfoForm' exact component={PatientInfoForm} />
       <Route path="/doctorMsg" exact component={DoctorMsg}></Route>
+      <Route path="/med" exact component={Med}></Route> 
     </Switch>
   );
 }
