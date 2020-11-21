@@ -30,15 +30,15 @@ const DoctorView = () => {
                         <h3>Your Profile</h3>
                     </div>
                     <div className="card-body">
-                        <div className="row  align-items-center">
+                        <div className="row  ">
                             <div className="col-lg-2 text-center">
                                 <i class="far fa-user fa-9x"></i>
                             </div>
                             <div className="col-lg-10">
-                                <h5 className="card-title">{data.name}</h5>
-                                <h5 className="card-title">EMAIL</h5>
-                                <h5 className="card-title">{data.special}</h5>
-                                <h5 className="card-title">{data.bio}</h5>
+                                <h5 className="card-title name">{data.name}</h5>
+                                <h5 className="card-title special">{data.special}</h5>
+                                <h5 className="card-title email">EMAIL</h5>
+                                <h5 className="card-title bio">{data.bio} sasassas s sasassas s sasassas s sasassas s sasassas s sasassas s sasassas s sasassas s sasassas s sasassas s sasassas s sasassas s sasassas s sasassas s sasassas s sasassas s sasassas s sasassas s sasassas s sasassas s</h5>
                                 <h5 className="card-title docState" >{data.city}</h5>
                             </div>
                         </div>
