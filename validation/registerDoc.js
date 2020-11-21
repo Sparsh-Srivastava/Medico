@@ -7,9 +7,9 @@ module.exports = function validateRegisterInputDoc(data) {
   data.name = !isEmpty(data.name) ? data.name : "";
   data.email = !isEmpty(data.email) ? data.email : "";
   data.password = !isEmpty(data.password) ? data.password : "";
-  // data.password2 = !isEmpty(data.password2) ? data.password2 : "";
-  // data.special = !isEmpty(data.special) ? data.special : "";
-  // data.bio = !isEmpty(data.bio) ? data.bio : "";
+  data.password2 = !isEmpty(data.password2) ? data.password2 : "";
+  data.special = !isEmpty(data.special) ? data.special : "";
+  data.bio = !isEmpty(data.bio) ? data.bio : "";
   data.city = !isEmpty(data.city) ? data.city : "";
   // Name checks
   if (Validator.isEmpty(data.name)) {
@@ -25,25 +25,25 @@ module.exports = function validateRegisterInputDoc(data) {
   if (Validator.isEmpty(data.password)) {
     errors.password = "Password field is required";
   }
-  // if (Validator.isEmpty(data.password2)) {
-  //     errors.password2 = "Confirm password field is required";
-  //   }
+  if (Validator.isEmpty(data.password2)) {
+    errors.password2 = "Confirm password field is required";
+  }
   if (!Validator.isLength(data.password, { min: 6, max: 30 })) {
     errors.password = "Password must be at least 6 characters";
   }
-  // if (!Validator.equals(data.password, data.password2)) {
-  //     errors.password2 = "Passwords must match";
-  //   }
+  if (!Validator.equals(data.password, data.password2)) {
+    errors.password2 = "Passwords must match";
+  }
 
   //Speciality Check
-  // if (Validator.isEmpty(data.special)) {
-  //   errors.special = "You need to enter your field of expertise";
-  // }
+  if (Validator.isEmpty(data.special)) {
+    errors.special = "You need to enter your field of expertise";
+  }
 
   //Bio Check
-  // if (Validator.isEmpty(data.bio)) {
-  //   errors.bio = "Tell us something about you";
-  // }
+  if (Validator.isEmpty(data.bio)) {
+    errors.bio = "Tell us something about you";
+  }
 
   //City Check
   if (Validator.isEmpty(data.city)) {
