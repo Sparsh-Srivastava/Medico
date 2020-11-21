@@ -1,0 +1,40 @@
+.landing{
+    overflow-x: hidden;
+}
+.landing .landingTitle{
+}
+.landing .landingTitle .col-lg-8{
+    padding: 4% 5%;
+}
+.landing .landingTitle .col-lg-4{
+    padding: 4% 5%;
+}
+.landing .landingTitle .card-img-top{
+    width:70%;
+    margin: 0 auto;
+}
+.landing .features{
+    padding: 4% 5% 2%;
+    background-color: #FF4F5A;
+    width: 100vw;
+    color: white;
+}
+.landing .landingTitle .col-lg-2{
+    margin:2% 8%;
+    border-width: 0;
+    background-color: #FF4F5A;
+}
+.landing .aboutUs{
+    padding: 4%;
+    font-size: 25px;
+}
+.landing .aboutUs h1{
+    margin-bottom: 1%;
+}
+.landing footer{
+    padding: 5%;
+    font-size: 25px;
+    height: 20vh;
+    background-color: #343A40;
+    color: white;
+}
