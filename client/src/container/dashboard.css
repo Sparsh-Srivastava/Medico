@@ -22,7 +22,6 @@
 
 }
 .home .allDocInfo{
-    height: 60vh;
     overflow-y: scroll;
 }
 .home .col-lg-3 .card-header{
