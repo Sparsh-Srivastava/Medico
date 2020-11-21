@@ -89,7 +89,7 @@ router.post("/login", (req, res) => {
           (err, token) => {
             res.json({
               success: true,
-              id: user.id + "id",
+              id: user.id,
               token: "Bearer " + token,
             });
           }
@@ -191,8 +191,8 @@ router.post("/loginDoc", (req, res) => {
 // Patient Contacting Doctor
 router.post("/contactDoctor", (req, res) => {
   let { name, email, description } = req.body;
-  let doctorId = "5fb81a60edc0683468c63ccb";
-  let patientId = "5fb81a49edc0683468c63cca";
+  let doctorId = "5fb9345a4712ae46753b55cc";
+  let patientId = "5fb92bb6b44a0c3e8d9a9482";
   let newMessage = {
     doctorId: doctorId,
     patientId: patientId,
@@ -231,7 +231,7 @@ router.post("/contactDoctor", (req, res) => {
 router.post("/contactPatient", (req, res) => {
   let { replyMessage } = req.body;
   let doctorId = "5fb81a60edc0683468c63ccb";
-  let patientId = "5fb81a49edc0683468c63cca";
+  let patientId = "5fb906db18dd191f4ae843f2";
   let newMessage = {
     doctorId: doctorId,
     reply: replyMessage,
@@ -273,19 +273,19 @@ router.post("/getDoctorsAtLocation", (req, res) => {
 });
 
 // Get Patient Information
-router.post("/getPatientInfo", (req, res) => {
-  User.findById(req.body.id, (err, user) => {
+router.get("/getPatientInfo", (req, res) => {
+  User.find({}, (err, doctors) => {
     if (err) {
       console.log(err);
     } else {
-      res.json(user);
+      res.json(doctors);
     }
   });
 });
 
 // Get Doctor Information
 router.post("/getDoctorInfo", (req, res) => {
-  User.findById(req.body.id, (err, doc) => {
+  Doc.findById(req.body.id, (err, doc) => {
     if (err) {
       console.log(err);
     } else {
@@ -326,14 +326,21 @@ router.post("/profile", (req, res) => {
     if (err) {
       console.log(err);
     } else {
-      user.medicalDetails = newMed;
-      user
+      newMed
         .save()
         .then((med) => {
-          console.log(med);
+          user.medicalDetails = newMed;
+          user
+            .save()
+            .then((med) => {
+              console.log(med);
+            })
+            .catch((err) => {
+              console.log("Error");
+            });
         })
         .catch((err) => {
-          console.log("Error");
+          console.log(err);
         });
     }
   });
@@ -348,16 +355,28 @@ router.post("/profile", (req, res) => {
   //   });
 });
 
-// router.post("/check", (req, res) => {
-//   let id = "5fb906db18dd191f4ae843f2";
-//   User.findOne({ name: req.body.name })
-//     .populate("users.medicalDetails")
-//     .then(function (user) {
-//       console.log(user);
-//     })
-//     .catch((err) => {
-//       console.log(err);
-//     });
-// });
+router.post("/check", (req, res) => {
+  let id = "5fb92bb6b44a0c3e8d9a9482";
+  User.findOne({ name: req.body.name })
+    .populate("medicalDetails")
+    .exec(function (err, user) {
+      if (err) {
+        console.log(err);
+      } else {
+        console.log(user);
+      }
+    });
+});
+
+router.get("/msg", (req, res) => {
+  let id = "5fb92c2ee680a53f239ad625";
+  Med.findById(id, (err, msg) => {
+    if (err) {
+      console.log(err);
+    } else {
+      console.log(msg);
+    }
+  });
+});
 
 module.exports = router;
