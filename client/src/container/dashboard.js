@@ -125,9 +125,12 @@
 // export default Home;
 
 import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 import "./dashboard.css"
 import img from "./Auth/LoginDoc/undraw_authentication_fsn5 (2).svg"
 import Axios from 'axios';
+import DoctorView from './DoctorView/DoctorView';
+/* import DoctorView from './DoctorView/DoctorView' */
 const Home = () => {
 
     const [Doctors, updateDoctor] = useState([]);
@@ -138,26 +141,30 @@ const Home = () => {
             .catch(err => console.log(err));
     }
 
-    console.log(Doctors)
+
 
     useEffect((e) => {
         DoctorList();
     }, []);
 
+
     let DoctorCard = Doctors.map(data => {
         return (
-                <div className="card rounded shadow-lg docInfo"  key={data._id}>
-                    <div className="card-header text-center">
+
+            <div className="allDocInfo card-body" key={data._id}>
+
+                <div className="card rounded shadow-lg docInfo">
+                    <div className="card-header text-center" >
                         <h3>{data.name}</h3>
                     </div>
                     <div className="card-body">
                         <h5 className="card-title">{data.special}</h5>
                         <p className="card-text">{data.bio}</p>
-                        <p className="card-text docState">{data.city}</p>
+                        <p className="card-text docState" >{data.city}</p>
                     </div>
                     <div className="row">
                         <div className="col-lg-6">
-                            <a href="#" className="btn rounded btn-primary profile">View Profile</a>
+                            <Link to='/doctorView' onClick={() => localStorage.setItem('id', data._id)}>Profile</Link>
                         </div>
                         <div className="col-lg-6">
                             <a href="#" className="btn rounded btn-info chat">Chat With the Doctor</a>
@@ -169,6 +176,7 @@ const Home = () => {
 
     return (
         <div className="home">
+
             <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
                 <a className="navbar-brand" href="#">Navbar</a>
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
