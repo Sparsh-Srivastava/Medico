@@ -8,6 +8,7 @@ import DoctorView from './DoctorView/DoctorView';
 const Home = () => {
 
     const [Doctors, updateDoctor] = useState([]);
+    const [patient, updatePatient] = useState([]);
 
     const DoctorList = async () => {
         await Axios.get('http://localhost:5000/allDoctors')
@@ -15,10 +16,15 @@ const Home = () => {
             .catch(err => console.log(err));
     }
 
-
+    const PatientInfo = async () => {
+        await Axios.get('http://localhost:5000/getPatientInfo')
+            .then(res => console.log(res))
+            .catch(err => console.log(err))
+    }
 
     useEffect((e) => {
         DoctorList();
+        PatientInfo();
     }, []);
 
 
