@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import Axios from 'axios'
-
+import './DoctorView.css'
 const DoctorView = () => {
 
     const [Doctors, updateDoctor] = useState([]);
@@ -23,23 +23,30 @@ const DoctorView = () => {
     let DoctorCard = Doctors.filter(data => data._id === localStorage.getItem('id')).map(data => {
         return (
 
-            <div className="allDocInfo card-body" key={data._id}>
+            <div className="allDocInfo" key={data._id}>
 
                 <div className="card rounded shadow-lg docInfo">
-                    <div className="card-header text-center" >
-                        <h3>{data.name}</h3>
+                    <div className="card-header rounded text-center" >
+                        <h3>Your Profile</h3>
                     </div>
                     <div className="card-body">
-                        <h5 className="card-title">{data.special}</h5>
-                        <p className="card-text">{data.bio}</p>
-                        <p className="card-text docState" >{data.city}</p>
-                    </div>
-                    <div className="row">
-                        <div className="col-lg-6">
-                            {/*  <Link to='/doctorView' onClick={() => localStorage.setItem('id', data._id)}>Profile</Link> */}
+                        <div className="row  align-items-center">
+                            <div className="col-lg-2 text-center">
+                                <i class="far fa-user fa-9x"></i>
+                            </div>
+                            <div className="col-lg-10">
+                                <h5 className="card-title">{data.name}</h5>
+                                <h5 className="card-title">EMAIL</h5>
+                                <h5 className="card-title">{data.special}</h5>
+                                <h5 className="card-title">{data.bio}</h5>
+                                <h5 className="card-title docState" >{data.city}</h5>
+                            </div>
                         </div>
-                        <div className="col-lg-6">
-                            <a href="#" className="btn rounded btn-info chat">Chat With the Doctor</a>
+                    </div>
+                    <div class="input-group">
+                        <input type="text" class="form-control sendInput" placeholder="Your Message" aria-label="Recipient's username" aria-describedby="button-addon2" />
+                        <div class="input-group-append">
+                            <button class="btn btn-info sendBtn" type="button" id="button-addon2">Send</button>
                         </div>
                     </div>
                 </div>
@@ -47,7 +54,7 @@ const DoctorView = () => {
         )
     })
     return (
-        <div>
+        <div className="profileDoc">
             {DoctorCard}
         </div>
     )
