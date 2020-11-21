@@ -11,7 +11,7 @@
 .home .patientInfo > .card{
     height: auto;
 }
-.home .col-lg-9 .card{
+.home .col-lg-9 > .card{
     padding-bottom: 2%;
 }
 .home .col-lg-3 {
