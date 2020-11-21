@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Axios from 'axios'
 
-const DoctorView = ({ id }) => {
+const DoctorView = () => {
 
     const [Doctors, updateDoctor] = useState([]);
 
