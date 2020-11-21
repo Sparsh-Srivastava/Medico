@@ -1,5 +1,5 @@
 POST http://localhost:5000/register
-content-type : application/json
+Content-type : application/json
 
 {
     "name": "Test",

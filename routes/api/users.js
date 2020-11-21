@@ -248,4 +248,11 @@ router.post("/contactPatient", (req, res) => {
   );
 });
 
+// Fetch All Doctors
+router.get("/allDoctors", (req, res) => {
+  Doc.find({}, (err, doctors) => {
+    res.json(doctors);
+  });
+});
+
 module.exports = router;
