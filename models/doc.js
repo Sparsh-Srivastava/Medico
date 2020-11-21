@@ -24,11 +24,9 @@ const DocSchema = new Schema({
   },
   special: {
     type: String,
-    required: true,
   },
   bio: {
     type: String,
-    required: true,
   },
   city: {
     type: String,

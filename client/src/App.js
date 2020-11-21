@@ -1,22 +1,22 @@
 // import logo from './logo.svg';
-import './App.css';
-import { Route, Switch } from 'react-router-dom';
+import "./App.css";
+import { Route, Switch } from "react-router-dom";
 // import {Route,Link,Switch} from 'react-router-dom';
-import SignupDoc from './container/Auth/SignDoc/signupDoc';
-import SignPt from './container/Auth/SignPt/signupPt';
-import LoginDoc from './container/Auth/LoginDoc/loginDoc';
-import LoginPt from './container/Auth/LoginPt/loginPt';
-import Home from './container/Home';
+import SignupDoc from "./container/Auth/SignDoc/signupDoc";
+import SignPt from "./container/Auth/SignPt/signupPt";
+import LoginDoc from "./container/Auth/LoginDoc/loginDoc";
+import LoginPt from "./container/Auth/LoginPt/loginPt";
+import Home from "./container/Home";
 function App() {
   return (
     <Switch>
-      <Route path='/' exact component={Home}></Route>
-      <Route path='/signPt' component={SignPt}></Route>
-      <Route path='/signDoc' component={SignupDoc}></Route>
-      <Route path='/loginDoc' component={LoginDoc}></Route>
-      <Route path='/loginPt' component={LoginPt}></Route>
+      <Route path="/" exact component={Home}></Route>
+      <Route path="/signPt" exact component={SignPt}></Route>
+      <Route path="/signDoc" exact component={SignupDoc}></Route>
+      <Route path="/loginDoc" exact component={LoginDoc}></Route>
+      <Route path="/loginPt" exact component={LoginPt}></Route>
     </Switch>
-  )
+  );
 }
 
 export default App;
