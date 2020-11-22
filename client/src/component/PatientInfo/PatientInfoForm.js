@@ -4,7 +4,7 @@ import { Redirect, Link } from "react-router-dom";
 import img from "./undraw_unlock_24mb.svg";
 import Axios from "axios";
 import { localsName } from "ejs";
-import Select from 'react-select'
+import Select from "react-select";
 
 class Signup extends Component {
     constructor(props) {
@@ -13,23 +13,25 @@ class Signup extends Component {
         this.handleChange = this.handleChange.bind(this);
 
         this.state = {
-            name: '',
-            email: '',
-            phone: '',
-            age: '',
-            dob: '',
-            city: '',
-            blood: '',
-            address: '',
-            description: '',
-            emergencyname: '',
-            emergencynum: '',
-            gender: '',
+            name: "",
+            email: "",
+            phone: "",
+            age: "",
+            dob: "",
+            city: "",
+            blood: "",
+            address: "",
+            description: "",
+            emergencyname: "",
+            emergencynum: "",
+            gender: "",
         };
     }
     postDetails = async (e) => {
         e.preventDefault();
+        let id = localStorage.getItem("patientId");
         await Axios.post("http://localhost:5000/profile", {
+            id: id,
             name: this.state.name,
             email: this.state.email,
             phone: this.state.phone,
@@ -40,12 +42,12 @@ class Signup extends Component {
             address: this.state.address,
             description: this.state.description,
             emergencyname: this.state.emergencyName,
-            medicalDetails: 'xyz',
             emergencynum: this.state.emergencynum,
             gender: this.state.gender,
         })
-            .then((res) => console.log("done"))
+            .then((res) => console.log('done'))
             .catch((err) => console.log(err));
+        <Redirect to='/dashboard' />
     };
     handleChange(e) {
         this.setState({
@@ -54,41 +56,41 @@ class Signup extends Component {
     }
 
     handleChange2(e) {
-        this.setState({ location: e.value })
+        this.setState({ location: e.value });
     }
 
     render() {
         const options = [
-            { value: 'Uttar Pradesh', label: 'Uttar Pradesh' },
-            { value: 'Maharashtra', label: 'Maharashtra' },
-            { value: 'Bihar', label: 'Bihar' },
-            { value: 'West Bengal', label: 'West Bengal' },
-            { value: 'Madhya Pradesh', label: 'Madhya Pradesh' },
-            { value: 'Tamil Nadu', label: 'Tamil Nadu' },
-            { value: 'Rajasthan', label: 'Rajasthan' },
-            { value: 'Karnataka', label: 'Karnataka' },
-            { value: 'Gujarat', label: 'Gujarat' },
-            { value: 'Andhra Pradesh', label: 'Andhra Pradesh' },
-            { value: 'Odisha', label: 'Odisha' },
-            { value: 'Telangana', label: 'Telangana' },
-            { value: 'Kerala', label: 'Kerala' },
-            { value: 'Jharkhand', label: 'Jharkhand' },
-            { value: 'Assam', label: 'Assam' },
-            { value: 'Punjab', label: 'Punjab' },
-            { value: 'Chattisgarh', label: 'Chattisgarh' },
-            { value: 'Haryana', label: 'Haryana' },
-            { value: 'Delhi', label: 'Delhi' },
-            { value: 'Jammu and Kashmir', label: 'Jammu and kashmir' },
-            { value: 'Uttarakhand', label: 'Uttarakhand' },
-            { value: 'Himachal Pradesh', label: 'Himachal Pradesh' },
-            { value: 'Tripura', label: 'Tripura' },
-            { value: 'Meghalaya', label: 'Mehghalaya' },
-            { value: 'Manipur', label: 'Manipur' },
-            { value: 'Nagaland', label: 'Nagaland' },
-            { value: 'Goa', label: 'Goa' },
-            { value: 'Arunachal Pradesh', label: 'Arunachal Pradesh' },
-            { value: 'Mizoram', label: 'Mizoram' },
-        ]
+            { value: "Uttar Pradesh", label: "Uttar Pradesh" },
+            { value: "Maharashtra", label: "Maharashtra" },
+            { value: "Bihar", label: "Bihar" },
+            { value: "West Bengal", label: "West Bengal" },
+            { value: "Madhya Pradesh", label: "Madhya Pradesh" },
+            { value: "Tamil Nadu", label: "Tamil Nadu" },
+            { value: "Rajasthan", label: "Rajasthan" },
+            { value: "Karnataka", label: "Karnataka" },
+            { value: "Gujarat", label: "Gujarat" },
+            { value: "Andhra Pradesh", label: "Andhra Pradesh" },
+            { value: "Odisha", label: "Odisha" },
+            { value: "Telangana", label: "Telangana" },
+            { value: "Kerala", label: "Kerala" },
+            { value: "Jharkhand", label: "Jharkhand" },
+            { value: "Assam", label: "Assam" },
+            { value: "Punjab", label: "Punjab" },
+            { value: "Chattisgarh", label: "Chattisgarh" },
+            { value: "Haryana", label: "Haryana" },
+            { value: "Delhi", label: "Delhi" },
+            { value: "Jammu and Kashmir", label: "Jammu and kashmir" },
+            { value: "Uttarakhand", label: "Uttarakhand" },
+            { value: "Himachal Pradesh", label: "Himachal Pradesh" },
+            { value: "Tripura", label: "Tripura" },
+            { value: "Meghalaya", label: "Mehghalaya" },
+            { value: "Manipur", label: "Manipur" },
+            { value: "Nagaland", label: "Nagaland" },
+            { value: "Goa", label: "Goa" },
+            { value: "Arunachal Pradesh", label: "Arunachal Pradesh" },
+            { value: "Mizoram", label: "Mizoram" },
+        ];
         if (this.state.valid) {
             localStorage.setItem("token", this.state.valid);
             localStorage.setItem("userId", this.state.userId);
@@ -212,7 +214,9 @@ class Signup extends Component {
                             </div>
                             <div className="row">
                                 <div className="col-sm-2">
-                                    <label><i class="fas fa-check-circle fa-lg"></i></label>
+                                    <label>
+                                        <i class="fas fa-check-circle fa-lg"></i>
+                                    </label>
                                 </div>
                                 <div className="col-sm-10">
                                     <input
@@ -388,4 +392,3 @@ class Signup extends Component {
     }
 }
 export default Signup;
-

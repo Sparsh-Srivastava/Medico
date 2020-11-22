@@ -306,8 +306,8 @@ router.post("/profile", (req, res) => {
     blood: req.body.blood,
     address: req.body.address,
     description: req.body.description,
-    emergencyName: req.body.emergencyName,
-    emergencyNum: req.body.emergencyNum,
+    emergencyname: req.body.emergencyName,
+    emergencynum: req.body.emergencyNum,
     gender: req.body.gender,
   });
 
@@ -353,6 +353,20 @@ router.post("/profile", (req, res) => {
   //   .catch((error) => {
   //     res.json("Message not saved");
   //   });
+});
+
+
+
+router.post("/patientInformation", (req, res) => {
+  User.findById(req.body.id)
+    .populate("medicalDetails")
+    .exec(function (err, user) {
+      if (err) {
+        console.log(err);
+      } else {
+        res.json(user);
+      }
+    });
 });
 
 router.post("/check", (req, res) => {
