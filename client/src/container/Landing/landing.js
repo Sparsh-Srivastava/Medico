@@ -5,33 +5,60 @@ const landing = () => {
     return (
         <div className="landing">
             <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-                <a class="navbar-brand" href="#">Navbar</a>
+                <a class="navbar-brand" href="#">Medico</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Link</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Dropdown
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Something else here</a>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-                    </li>
+                    <li className="nav-item dropdown">
+                <a
+                  className="nav-link dropdown-toggle"
+                  href="#"
+                  id="navbarDropdown"
+                  role="button"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                >
+                  Sign-Up
+                </a>
+                <div className="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a className="dropdown-item" href="/signDoc">
+                    As a Doctor
+                  </a>
+                  <a className="dropdown-item" href="/signPt">
+                    As a Patient
+                  </a>
+                </div>
+              </li>
+              <li className="nav-item dropdown">
+                <a
+                  className="nav-link dropdown-toggle"
+                  href="#"
+                  id="navbarDropdown"
+                  role="button"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                >
+                  Log In
+                </a>
+                <div className="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a className="dropdown-item" href="/loginDoc">
+                    As a Doctor
+                  </a>
+                  <a className="dropdown-item" href="/loginPt">
+                    As a Patient
+                  </a>
+                </div>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" href="#footer">
+                  Contact Us <span className="sr-only"></span>
+                </a>
+              </li>
                     </ul>
                 </div>
             </nav>
@@ -69,8 +96,13 @@ const landing = () => {
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi arcu nisl, ullamcorper quis sapien ut, fermentum rhoncus mi. Sed blandit felis ut nunc auctor, non mollis ante lacinia. Nullam vitae rutrum ex. Duis faucibus, nibh id auctor ultricies, elit lorem viverra sem, ut porta elit elit sit amet ligula. Nunc eget leo felis. Etiam vehicula molestie odio, quis hendrerit tellus luctus vel. Maecenas rutrum urna sed accumsan fermentum. In tincidunt ex lectus, nec ornare nibh ullamcorper vitae. Vivamus nunc nulla, pharetra et lacus et, aliquam rutrum libero. Maecenas cursus felis vitae aliquet faucibus. Praesent maximus, orci a sollicitudin faucibus, tellus ipsum tempor dui, in ultricies mauris metus dignissim diam. Nunc tincidunt ultrices commodo. Donec quis scelerisque tellus. Praesent vitae commodo arcu, ac venenatis est.
                 </div>
             </div>
-            <footer className="text-center">
-                Footer will come here
+            <footer className="text-center" id="footer">
+                By Team Unique
+                <br/>
+                <i class="fab fa-linkedin"></i>
+                <i class="fab fa-facebook-square"></i>
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-twitter"></i>
             </footer>
         </div>
     )

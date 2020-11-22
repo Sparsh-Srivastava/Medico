@@ -76,7 +76,7 @@ class Login extends Component {
       <div className="logInPt">
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
           <a className="navbar-brand" href="#">
-            Navbar
+            Medico
           </a>
           <button
             className="navbar-toggler"
@@ -92,11 +92,6 @@ class Login extends Component {
 
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav ml-auto">
-              <li className="nav-item">
-                <a className="nav-link" href="/#">
-                  Home <span className="sr-only">(current)</span>
-                </a>
-              </li>
               <li className="nav-item dropdown">
                 <a
                   className="nav-link dropdown-toggle"
@@ -119,7 +114,7 @@ class Login extends Component {
                 </div>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="/#">
+                <a className="nav-link" href="/#footer">
                   Contact Us <span className="sr-only"></span>
                 </a>
               </li>

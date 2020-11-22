@@ -30,11 +30,14 @@
     margin-bottom: 1%;
 }
 .landing footer{
-    padding: 5%;
+    padding: 3%;
     font-size: 25px;
     height: 20vh;
     background-color: #343A40;
     color: white;
+}
+.landing footer i{
+    margin:1% 2%;
 }
 @media (max-width:600px){
     .landing .row{

@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import { Redirect, Link } from "react-router-dom";
 
-import img from "./undraw_unlock_24mb.svg";
+import img from "./undraw_uploading_go67.svg";
 import Axios from "axios";
 import { localsName } from "ejs";
 import Select from "react-select";
-
+import "./PatientInfoForm.css"
 class Signup extends Component {
   constructor(props) {
     super(props);
@@ -98,10 +98,10 @@ class Signup extends Component {
     if (this.state.valid) return <Redirect to="/"></Redirect>;
 
     return (
-      <div className="signupPt">
+      <div className="signupPt patientInfo">
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
           <a className="navbar-brand" href="#">
-            Navbar
+            Medico
           </a>
           <button
             className="navbar-toggler"
@@ -156,224 +156,242 @@ class Signup extends Component {
             <img alt="..." src={img} />
           </div>
           <div className="col-lg-4 shadow-lg text-center rounded">
-            <h4> Sign-Up for Patient </h4>
+            <h4> Fill your Details </h4>
             <form>
-              <div className="row">
-                <div className="col-sm-2">
-                  <label>
-                    <i className="fas fa-signature fa-lg"></i>
-                  </label>
+            <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <div className="row">
+                    <div className="col-sm-2">
+                      <label>
+                        <i className="fas fa-signature fa-lg"></i>
+                      </label>
+                    </div>
+                    <div className="col-sm-10">
+                      <input
+                        type="text"
+                        name="name"
+                        className="form-control"
+                        placeholder="Enter your Name"
+                        aria-describedby="emailHelp"
+                        onChange={this.handleChange}
+                        value={this.state.name}
+                      ></input>
+                    </div>
+                  </div>
+                  <div className="row">
+                    <div className="col-sm-2">
+                      <label htmlFor="exampleInputEmail1">
+                        <i className="fas fa-envelope fa-lg"></i>
+                      </label>
+                    </div>
+                    <div className="col-sm-10">
+                      <input
+                        type="email"
+                        name="email"
+                        placeholder="Enter your email"
+                        className="form-control"
+                        aria-describedby="emailHelp"
+                        value={this.state.email}
+                        onChange={this.handleChange}
+                      ></input>
+                    </div>
+                  </div>
+                  <div className="row">
+                    <div className="col-sm-2">
+                      <label>
+                        <i className="fas fa-phone-alt fa-lg"></i>
+                      </label>
+                    </div>
+                    <div className="col-sm-10">
+                      <input
+                        value={this.state.phone}
+                        name="phone"
+                        type="number"
+                        placeholder="Enter Phone Number"
+                        className="form-control"
+                        aria-describedby="emailHelp"
+                        onChange={this.handleChange}
+                      ></input>
+                    </div>
+                  </div>
+                  <div className="row">
+                    <div className="col-sm-2">
+                      <label>
+                      <i class="fas fa-birthday-cake fa-lg"></i>
+                      </label>
+                    </div>
+                    <div className="col-sm-10">
+                      <input
+                        value={this.state.age}
+                        name="age"
+                        type="number"
+                        placeholder="Enter your Age"
+                        className="form-control"
+                        aria-describedby="emailHelp"
+                        onChange={this.handleChange}
+                      ></input>
+                    </div>
+                  </div>
+                  <div className="row">
+                    <div className="col-sm-2">
+                      <label>
+                      <i class="fas fa-calendar-day fa-lg"></i>
+                      </label>
+                    </div>
+                    <div className="col-sm-10">
+                      <input
+                        value={this.state.dob}
+                        name="dob"
+                        type="text"
+                        placeholder="Enter your DOB"
+                        className="form-control"
+                        aria-describedby="emailHelp"
+                        onChange={this.handleChange}
+                      ></input>
+                    </div>
+                  </div>
+                  <div className="row">
+                    <div className="col-sm-2">
+                      <label>
+                      <i class="fas fa-city fa-lg"></i>
+                      </label>
+                    </div>
+                    <div className="col-sm-10">
+                      <input
+                        value={this.state.city}
+                        name="city"
+                        type="text"
+                        placeholder="Enter your City"
+                        className="form-control"
+                        aria-describedby="emailHelp"
+                        onChange={this.handleChange}
+                      ></input>
+                    </div>
+                  </div>
                 </div>
-                <div className="col-sm-10">
-                  <input
-                    type="text"
-                    name="name"
-                    className="form-control"
-                    placeholder="Enter your Name"
-                    aria-describedby="emailHelp"
-                    onChange={this.handleChange}
-                    value={this.state.name}
-                  ></input>
+                <div class="carousel-item">
+                    <div className="row">
+                    <div className="col-sm-2">
+                      <label>
+                        <i className="fas fa-tint fa-lg"></i>
+                      </label>
+                    </div>
+                    <div className="col-sm-10">
+                      <input
+                        value={this.state.blood}
+                        name="blood"
+                        type="text"
+                        placeholder="Enter your Blood group"
+                        className="form-control"
+                        aria-describedby="emailHelp"
+                        onChange={this.handleChange}
+                      ></input>
+                    </div>
+                  </div>
+                  <div className="row">
+                    <div className="col-sm-2">
+                      <label>
+                        <i className="fas fa-map-marked-alt fa-lg"></i>
+                      </label>
+                    </div>
+                    <div className="col-sm-10">
+                      <input
+                        value={this.state.address}
+                        name="address"
+                        type="text"
+                        placeholder="Enter your Address"
+                        className="form-control"
+                        aria-describedby="emailHelp"
+                        onChange={this.handleChange}
+                      ></input>
+                    </div>
+                  </div>
+                  <div className="row">
+                    <div className="col-sm-2">
+                      <label>
+                        <i className="fas fa-info-circle fa-lg"></i>
+                      </label>
+                    </div>
+                    <div className="col-sm-10">
+                      <input
+                        value={this.state.description}
+                        name="description"
+                        type="text"
+                        placeholder="Enter your Description"
+                        className="form-control"
+                        aria-describedby="emailHelp"
+                        onChange={this.handleChange}
+                      ></input>
+                    </div>
+                  </div>
+                  <div className="row">
+                    <div className="col-sm-2">
+                      <label>
+                      <i class="fas fa-ambulance fa-lg"></i>
+                      </label>
+                    </div>
+                    <div className="col-sm-10">
+                      <input
+                        value={this.state.emergencyname}
+                        name="emergencyname"
+                        type="text"
+                        placeholder="Enter Emergency Name"
+                        className="form-control"
+                        aria-describedby="emailHelp"
+                        onChange={this.handleChange}
+                      ></input>
+                    </div>
+                  </div>
+                  <div className="row">
+                    <div className="col-sm-2">
+                      <label>
+                        <i class="fas fa-phone-alt fa-lg"></i>
+                      </label>
+                    </div>
+                    <div className="col-sm-10">
+                      <input
+                        value={this.state.emergencynum}
+                        name="emergencynum"
+                        type="number"
+                        placeholder="Enter your Emergency number"
+                        className="form-control"
+                        aria-describedby="emailHelp"
+                        onChange={this.handleChange}
+                      ></input>
+                    </div>
+                  </div>
+                  <div className="row">
+                    <div className="col-sm-2">
+                      <label>
+                        <i class="fas fa-venus-mars fa-lg"></i>
+                      </label>
+                    </div>
+                    <div className="col-sm-10">
+                      <input
+                        value={this.state.gender}
+                        name="gender"
+                        type="text"
+                        placeholder="Gender"
+                        className="form-control"
+                        aria-describedby="emailHelp"
+                        onChange={this.handleChange}
+                      ></input>
+                    </div>
+                  </div>
                 </div>
               </div>
-              <div className="row">
-                <div className="col-sm-2">
-                  <label htmlFor="exampleInputEmail1">
-                    <i className="fas fa-envelope fa-lg"></i>
-                  </label>
-                </div>
-                <div className="col-sm-10">
-                  <input
-                    type="email"
-                    name="email"
-                    placeholder="Enter your email"
-                    className="form-control"
-                    aria-describedby="emailHelp"
-                    value={this.state.email}
-                    onChange={this.handleChange}
-                  ></input>
-                </div>
-              </div>
-              <div className="row">
-                <div className="col-sm-2">
-                  <label>
-                    <i className="fas fa-key fa-lg"></i>
-                  </label>
-                </div>
-                <div className="col-sm-10">
-                  <input
-                    value={this.state.phone}
-                    name="phone"
-                    type="number"
-                    placeholder="Enter Phone"
-                    className="form-control"
-                    aria-describedby="emailHelp"
-                    onChange={this.handleChange}
-                  ></input>
-                </div>
-              </div>
-              <div className="row">
-                <div className="col-sm-2">
-                  <label>
-                    <i class="fas fa-check-circle fa-lg"></i>
-                  </label>
-                </div>
-                <div className="col-sm-10">
-                  <input
-                    value={this.state.age}
-                    name="age"
-                    type="number"
-                    placeholder="age"
-                    className="form-control"
-                    aria-describedby="emailHelp"
-                    onChange={this.handleChange}
-                  ></input>
-                </div>
-              </div>
-              <div className="row">
-                <div className="col-sm-2">
-                  <label>
-                    <i className="fas fa-map-marked-alt fa-lg"></i>
-                  </label>
-                </div>
-                <div className="col-sm-10">
-                  <input
-                    value={this.state.dob}
-                    name="dob"
-                    type="text"
-                    placeholder="enter your dob"
-                    className="form-control"
-                    aria-describedby="emailHelp"
-                    onChange={this.handleChange}
-                  ></input>
-                </div>
-              </div>
-              <div className="row">
-                <div className="col-sm-2">
-                  <label>
-                    <i className="fas fa-map-marked-alt fa-lg"></i>
-                  </label>
-                </div>
-                <div className="col-sm-10">
-                  <input
-                    value={this.state.city}
-                    name="city"
-                    type="text"
-                    placeholder="city"
-                    className="form-control"
-                    aria-describedby="emailHelp"
-                    onChange={this.handleChange}
-                  ></input>
-                </div>
-              </div>
-              <div className="row">
-                <div className="col-sm-2">
-                  <label>
-                    <i className="fas fa-map-marked-alt fa-lg"></i>
-                  </label>
-                </div>
-                <div className="col-sm-10">
-                  <input
-                    value={this.state.blood}
-                    name="blood"
-                    type="text"
-                    placeholder="Enter your Blood group"
-                    className="form-control"
-                    aria-describedby="emailHelp"
-                    onChange={this.handleChange}
-                  ></input>
-                </div>
-              </div>
-              <div className="row">
-                <div className="col-sm-2">
-                  <label>
-                    <i className="fas fa-map-marked-alt fa-lg"></i>
-                  </label>
-                </div>
-                <div className="col-sm-10">
-                  <input
-                    value={this.state.address}
-                    name="address"
-                    type="text"
-                    placeholder="enter your address"
-                    className="form-control"
-                    aria-describedby="emailHelp"
-                    onChange={this.handleChange}
-                  ></input>
-                </div>
-              </div>
-              <div className="row">
-                <div className="col-sm-2">
-                  <label>
-                    <i className="fas fa-map-marked-alt fa-lg"></i>
-                  </label>
-                </div>
-                <div className="col-sm-10">
-                  <input
-                    value={this.state.description}
-                    name="description"
-                    type="text"
-                    placeholder="describe"
-                    className="form-control"
-                    aria-describedby="emailHelp"
-                    onChange={this.handleChange}
-                  ></input>
-                </div>
-              </div>
-              <div className="row">
-                <div className="col-sm-2">
-                  <label>
-                    <i className="fas fa-map-marked-alt fa-lg"></i>
-                  </label>
-                </div>
-                <div className="col-sm-10">
-                  <input
-                    value={this.state.emergencyname}
-                    name="emergencyname"
-                    type="text"
-                    placeholder="Enter Emergency Name"
-                    className="form-control"
-                    aria-describedby="emailHelp"
-                    onChange={this.handleChange}
-                  ></input>
-                </div>
-              </div>
-              <div className="row">
-                <div className="col-sm-2">
-                  <label>
-                    <i className="fas fa-map-marked-alt fa-lg"></i>
-                  </label>
-                </div>
-                <div className="col-sm-10">
-                  <input
-                    value={this.state.emergencynum}
-                    name="emergencynum"
-                    type="number"
-                    placeholder="enter your emergency number"
-                    className="form-control"
-                    aria-describedby="emailHelp"
-                    onChange={this.handleChange}
-                  ></input>
-                </div>
-              </div>
-              <div className="row">
-                <div className="col-sm-2">
-                  <label>
-                    <i className="fas fa-map-marked-alt fa-lg"></i>
-                  </label>
-                </div>
-                <div className="col-sm-10">
-                  <input
-                    value={this.state.gender}
-                    name="gender"
-                    type="text"
-                    placeholder="Gender"
-                    className="form-control"
-                    aria-describedby="emailHelp"
-                    onChange={this.handleChange}
-                  ></input>
-                </div>
-              </div>
+              <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+              </a>
+              <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+              </a>
+            </div>
+              
+              
               <div className="text-center">
                 <button
                   type="submit"
