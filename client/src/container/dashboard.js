@@ -91,6 +91,9 @@ const Home = () => {
                         <div className="col-lg-6">{patient.emergencynum}</div>
                     </div>
                 </div>
+                <div>
+                    <a href="/patientInfoForm" className="btn btn-block patientForm rounded btn-primary">Add Info</a>
+                </div>
             </div>
         </div>
     return (
@@ -113,7 +116,7 @@ const Home = () => {
                 <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div className="navbar-nav  ml-auto">
                         <a className="nav-link active" href="/">
-                            Home <span className="sr-only">(current)</span>
+                            Log-Out <span className="sr-only">(current)</span>
                         </a>
                     </div>
                 </div>
