@@ -19,14 +19,15 @@ const Home = () => {
     const PatientInfo = async () => {
         await Axios.post("http://localhost:5000/getPatientInfo", { patientId })
             .then((res) => {
-                // if (res.data._id === patientId) {
-                //   res.data.updatePatient(res.data);
-                // }
+                {
+                    updatePatient(res.data);
+                }
                 updatePatient(res.data);
                 console.log(res.data);
             })
             .catch((err) => console.log(err));
     };
+    console.log(patient, 'hello');
 
     useEffect((e) => {
         PatientInfo();
@@ -64,6 +65,34 @@ const Home = () => {
         );
     });
 
+
+    let patientCard =
+        <div className="patientInfo rounded  shadow-lg">
+            <div className="card rounded">
+                <div className="card-header text-center">
+                    <h3>{patient.name}</h3>
+                </div>
+                <div className="card-body rounded text-center">
+                    <h4>Your details</h4>
+                    <div className="row">
+                        <div className="col-lg-6">{patient.email}</div>
+                        <div className="col-lg-6">{patient.blood}</div>
+                    </div>
+                    <div className="row">
+                        <div className="col-lg-6">{patient.age}</div>
+                        <div className="col-lg-6">{patient.gender}</div>
+                    </div>
+                    <div className="row">
+                        <div className="col-lg-6">{patient.dob}</div>
+                        <div className="col-lg-6">{patient.city}</div>
+                    </div>
+                    <div className="row">
+                        <div className="col-lg-6">{patient.emergencyname}</div>
+                        <div className="col-lg-6">{patient.emergencynum}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
     return (
         <div className="home">
             <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -97,32 +126,7 @@ const Home = () => {
             </nav>
             <div className="row">
                 <div className="col-lg-9">
-                    <div className="patientInfo rounded  shadow-lg">
-                        <div className="card rounded">
-                            <div className="card-header text-center">
-                                <h3>Hello Name!!</h3>
-                            </div>
-                            <div className="card-body rounded text-center">
-                                <h4>Your Details</h4>
-                                <div className="row">
-                                    <div className="col-lg-6">YOUR EMAIL</div>
-                                    <div className="col-lg-6">YOUR BLOOD GROUP</div>
-                                </div>
-                                <div className="row">
-                                    <div className="col-lg-6">YOUR AGE</div>
-                                    <div className="col-lg-6">YOUR GENDER</div>
-                                </div>
-                                <div className="row">
-                                    <div className="col-lg-6">YOUR DOB</div>
-                                    <div className="col-lg-6">YOUR CITY</div>
-                                </div>
-                                <div className="row">
-                                    <div className="col-lg-6">YOUR EM.NAME</div>
-                                    <div className="col-lg-6">YOUR EM.NO</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    {patientCard}
                     <div className=" card rounded shadow-lg">
                         <h1 className="text-center sticky-top card-header">Recommended </h1>
                         <div className="allDocInfo card-body">{DoctorCard}</div>

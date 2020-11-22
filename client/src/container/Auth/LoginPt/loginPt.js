@@ -43,6 +43,7 @@ class Login extends Component {
           localStorage.setItem("isLoggedIn", res.data.success);
           localStorage.setItem("patientToken", res.data.token);
           console.log(res);
+
         }
         // this.setState({ valid: res.data.token, userId: res.data.userId })
         // console.log(res)
@@ -50,6 +51,11 @@ class Login extends Component {
       .catch((err) => console.log(err));
 
     console.log(localStorage.getItem("token"));
+
+    const isLoggedIn = localStorage.getItem('isLoggedIn');
+    if (isLoggedIn) {
+      <Redirect to='/'></Redirect>
+    }
   };
   handleChange(e) {
     this.setState({
