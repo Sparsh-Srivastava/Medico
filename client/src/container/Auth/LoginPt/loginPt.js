@@ -17,6 +17,7 @@ class Login extends Component {
       errMessage: " ",
       valid: false,
       userId: "",
+      token: "",
     };
   }
 
@@ -43,6 +44,7 @@ class Login extends Component {
           localStorage.setItem("isLoggedIn", res.data.success);
           localStorage.setItem("patientToken", res.data.token);
           console.log(res);
+          this.setState({ token: res.data })
 
         }
         // this.setState({ valid: res.data.token, userId: res.data.userId })
@@ -118,11 +120,17 @@ class Login extends Component {
                   </a>
                 </div>
               </li>
-              <li className="nav-item">
-                <a className="nav-link" href="/#">
-                  Contact Us <span className="sr-only"></span>
-                </a>
-              </li>
+              {this.state.token ?
+                <li className="nav-item">
+                  <a className="nav-link" href="/dashboard">
+                    Dashboard<span className="sr-only"></span>
+                  </a>
+                </li> : <li className="nav-item">
+                  <a className="nav-link" href="/#">
+                    Contact us<span className="sr-only"></span>
+                  </a>
+                </li>
+              }
             </ul>
           </div>
         </nav>
