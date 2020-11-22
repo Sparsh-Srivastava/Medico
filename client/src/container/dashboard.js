@@ -116,7 +116,7 @@ const Home = () => {
                 <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div className="navbar-nav  ml-auto">
                         <a className="nav-link active" href="/">
-                            Home <span className="sr-only">(current)</span>
+                            Log-Out <span className="sr-only">(current)</span>
                         </a>
                     </div>
                 </div>
