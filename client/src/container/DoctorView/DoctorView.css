@@ -1,0 +1,61 @@
+.profileDoc .col-sm-11,.profileDoc .col-sm-1{
+    border-color:#17A2B8 ;
+    border-width: 1px;
+    border-radius: 0% !important;
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
+    padding:0;
+}
+.profileDoc .sendBtn{
+    border-radius: 0;
+    border-bottom-right-radius: 16px;
+}
+.profileDoc .input-group{
+    width: 100%;
+}
+.profileDoc .sendInput{
+    border-radius: 0;
+    border-bottom-left-radius: 16px;
+}
+.profileDoc .card-header{
+    background-color: #FF4F5A;
+    color: whitesmoke;
+    border-radius: 0 !important;
+    border-top-left-radius: 16px !important;
+    border-top-right-radius: 16px !important;
+}
+.profileDoc .card-body{
+    background-color: #fc7d86;
+    color: #f1f6f9;
+}
+.profileDoc .allDocInfo{
+    padding: 2% 3%;
+}
+.profileDoc .name{
+    text-align: right;
+    font-size: 10rem;
+}
+.profileDoc i{
+    margin-top: 15%;
+    margin-left: 25%;
+    font-size: 10rem;
+}
+.profileDoc .email{
+    text-align: right;
+    font-size: 3rem;
+    letter-spacing: 5px;
+}
+.profileDoc .special{
+    text-align: right;
+    font-size: 3rem;
+    letter-spacing: 5px;
+}
+.profileDoc .bio{
+    font-size: 2rem;
+}
+.profileDoc .docState{
+    text-align: right;
+    font-size: 3rem;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+}

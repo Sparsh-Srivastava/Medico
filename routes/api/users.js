@@ -229,11 +229,11 @@ router.post("/contactDoctor", (req, res) => {
 
 // Doctor Replying Back To Patient
 router.post("/contactPatient", (req, res) => {
-  let { replyMessage } = req.body;
-  let doctorId = "5fb81a60edc0683468c63ccb";
-  let patientId = "5fb906db18dd191f4ae843f2";
+  let { replyMessage, patientId } = req.body;
+  // let doctorId = "5fb9345a4712ae46753b55cc";
+  // let patientId = "5fb92bb6b44a0c3e8d9a9482";
   let newMessage = {
-    doctorId: doctorId,
+    doctorId: req.body.doctorId,
     reply: replyMessage,
     date: new Date(),
   };
@@ -355,9 +355,8 @@ router.post("/profile", (req, res) => {
   //   });
 });
 
-
-
 router.post("/patientInformation", (req, res) => {
+  console.log(req.body.id);
   User.findById(req.body.id)
     .populate("medicalDetails")
     .exec(function (err, user) {
@@ -370,14 +369,13 @@ router.post("/patientInformation", (req, res) => {
 });
 
 router.post("/check", (req, res) => {
-  let id = "5fb92bb6b44a0c3e8d9a9482";
   User.findOne({ name: req.body.name })
     .populate("medicalDetails")
     .exec(function (err, user) {
       if (err) {
         console.log(err);
       } else {
-        console.log(user);
+        res.json(user);
       }
     });
 });
