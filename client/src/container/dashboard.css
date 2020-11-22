@@ -112,6 +112,11 @@ h1.text-center{
 .home .carousel-inner h5{
     line-height:50vh;
 }
+.home .patientForm{
+    border-radius: 0 !important;
+    border-bottom-left-radius: 16px !important;
+    border-bottom-right-radius: 16px !important;
+}
 @media (max-width:1050px){
     .home .col-lg-3{
         display: none;

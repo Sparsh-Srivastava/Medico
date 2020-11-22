@@ -91,6 +91,9 @@ const Home = () => {
                         <div className="col-lg-6">{patient.emergencynum}</div>
                     </div>
                 </div>
+                <div>
+                    <a href="/patientInfoForm" className="btn btn-block patientForm rounded btn-primary">Add Info</a>
+                </div>
             </div>
         </div>
     return (
