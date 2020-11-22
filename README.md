@@ -48,6 +48,6 @@ Medico is a health web app that connects doctors and patients
  
  [Kunal Singhal](https://github.com/Kunal-2001)
  
- [Sparsh Shrivastav](https://github.com/Sparsh-Srivastava)
+ [Sparsh Srivastava](https://github.com/Sparsh-Srivastava)
  
  [Harsh Shaw](https://github.com/raghav13901)
