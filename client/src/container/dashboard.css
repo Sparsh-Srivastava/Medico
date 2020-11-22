@@ -11,7 +11,7 @@
 .home .patientInfo > .card{
     height: auto;
 }
-.home .col-lg-9 > .card{
+.home .col-lg-12 > .card{
     padding-bottom: 2%;
 }
 .home .col-lg-3 {
@@ -32,52 +32,52 @@
     border-top-left-radius: 16px !important;
     border-top-right-radius: 16px !important;
 }
-.home .col-lg-9 > .card > .card-header,.home .col-lg-9 > .patientInfo > .card > .card-header{
+.home .col-lg-12 > .card > .card-header,.home .col-lg-12 > .patientInfo > .card > .card-header{
     border-top-left-radius: 16px;
     border-top-right-radius: 16px;
     background-color: #FF4F5A;
     color: whitesmoke;
 }
-.home .col-lg-9 > .patientInfo > .card > .card-body > .row{    
+.home .col-lg-12 > .patientInfo > .card > .card-body > .row{    
     margin:1% 0;
 }
 h1.text-center{
     margin-bottom: 3%;
 }
-.home > .row > .col-lg-9{
+.home > .row > .col-lg-12{
     padding: 2% 3%;
 }
 .home .rounded{
     border-radius: 16px;
 }
-.home .col-lg-9 > .patientInfo{
+.home .col-lg-12 > .patientInfo{
     margin-bottom: 5%;
 }
-.home .col-lg-9 > .card > .allDocInfo >  .card{
+.home .col-lg-12 > .card > .allDocInfo >  .card{
     background-color: #fcdddf;
     color: #000000;
     border-width: 0;
 }
-.home .col-lg-9 > .card > .allDocInfo > .card > .row{
+.home .col-lg-12 > .card > .allDocInfo > .card > .row{
     width: 100%;
     margin: 0;
 }
-.home .col-lg-9 > .card > .allDocInfo > .card > .card-header{
+.home .col-lg-12 > .card > .allDocInfo > .card > .card-header{
     background-color: #fc7d86;
     color: #f1f6f9;
     border-radius: 16px;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
 }
-.home .col-lg-9 > .card > .allDocInfo > .card > .card-body{
+.home .col-lg-12 > .card > .allDocInfo > .card > .card-body{
     border-radius: 16px;
     border-top-left-radius: 0;
     border-top-right-radius: 0;
 }
-.home .col-lg-9 > .card > .allDocInfo > .card > .row .btn{
+.home .col-lg-12 > .card > .allDocInfo > .card > .row .btn{
     display: block;
 }
-.home .col-lg-9 > .card > .allDocInfo > .card > .row > .col-lg-6{
+.home .col-lg-12 > .card > .allDocInfo > .card > .row > .col-lg-6{
     padding: 0%;
 }
 .home .docState{
@@ -116,7 +116,7 @@ h1.text-center{
     .home .col-lg-3{
         display: none;
     }
-    .home .col-lg-9 > .card,.home .col-lg-9 .patientInfo .card{
+    .home .col-lg-12 > .card,.home .col-lg-12 .patientInfo .card{
         width: 94vw;
         margin:5% 2%;
     }
@@ -125,26 +125,26 @@ h1.text-center{
     .home .allDocInfo{
         height: 70vh;
     }
-    .home .col-lg-9 > .card,.home .col-lg-9 .patientInfo .card{
+    .home .col-lg-12 > .card,.home .col-lg-12 .patientInfo .card{
         width: 90vw;
         margin:4%;
     }
     .home h1{
         font-size: 2rem;
     }
-    .home .col-lg-9 > .card > .allDocInfo > .card > .row .btn{
+    .home .col-lg-12 > .card > .allDocInfo > .card > .row .btn{
         border-radius: 0% !important;
     }
-    .home .col-lg-9 > .card > .allDocInfo > .card > .row .btn.chat{
+    .home .col-lg-12 > .card > .allDocInfo > .card > .row .btn.chat{
         border-bottom-left-radius: 16px !important;
         border-bottom-right-radius: 16px !important;
     }
-    .home .col-lg-9 > .card > .allDocInfo > .card {
+    .home .col-lg-12 > .card > .allDocInfo > .card {
         margin-bottom: 10%;
     }
 }
 @media (max-width:600px){
-    .home .col-lg-9 > .card,.home .col-lg-9 .patientInfo .card{
+    .home .col-lg-12 > .card,.home .col-lg-12 .patientInfo .card{
         width: 90vw;
         margin:5%;
     }

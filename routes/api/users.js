@@ -16,6 +16,7 @@ const Doc = require("../../models/doc");
 //Load Med model
 const Med = require("../../models/med");
 const e = require("express");
+const { request } = require("express");
 
 // @route POST api/users/register
 // @desc Register user
@@ -191,8 +192,8 @@ router.post("/loginDoc", (req, res) => {
 // Patient Contacting Doctor
 router.post("/contactDoctor", (req, res) => {
   let { name, email, description } = req.body;
-  let doctorId = "5fb9345a4712ae46753b55cc";
-  let patientId = "5fb92bb6b44a0c3e8d9a9482";
+  let doctorId = req.body.id;
+  let patientId = "5fb7fb6c61a3ef4bc4762cb5";
   let newMessage = {
     doctorId: doctorId,
     patientId: patientId,

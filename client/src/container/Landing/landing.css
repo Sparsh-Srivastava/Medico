@@ -29,6 +29,15 @@
 .landing .aboutUs h1{
     margin-bottom: 1%;
 }
+.landing .siteHead{
+    letter-spacing: 10px;
+    margin-bottom: 8%;
+}
+.landing .siteDesc{
+    letter-spacing: 5px;
+    margin-bottom: 8%;
+    font-size: 1.5rem;
+}
 .landing footer{
     padding: 3%;
     font-size: 25px;

@@ -97,7 +97,7 @@ const Home = () => {
         <div className="home">
             <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
                 <a className="navbar-brand" href="#">
-                    Navbar
+                    Medico
         </a>
                 <button
                     className="navbar-toggler"
@@ -112,35 +112,18 @@ const Home = () => {
                 </button>
                 <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div className="navbar-nav  ml-auto">
-                        <a className="nav-link active" href="#">
+                        <a className="nav-link active" href="/">
                             Home <span className="sr-only">(current)</span>
                         </a>
-                        <a className="nav-link" href="#">
-                            Features
-            </a>
-                        <a className="nav-link" href="#">
-                            Pricing
-            </a>
                     </div>
                 </div>
             </nav>
             <div className="row">
-                <div className="col-lg-9">
+                <div className="col-lg-12">
                     {patientCard}
                     <div className=" card rounded shadow-lg">
                         <h1 className="text-center sticky-top card-header">Recommended </h1>
                         <div className="allDocInfo card-body">{DoctorCard}</div>
-                    </div>
-                </div>
-                <div className="col-lg-3">
-                    <div className="card shadow-lg rounded">
-                        <div className="card-header rounded">
-                            <h3 className="text-center">
-                                {" "}
-                Health Tips!! <i class="fas fa-heartbeat"></i>
-                            </h3>
-                        </div>
-                        <div className="card-body"></div>
                     </div>
                 </div>
             </div>
