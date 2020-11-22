@@ -38,7 +38,7 @@ const DoctorView = () => {
                                 <h5 className="card-title name">{data.name}</h5>
                                 <h5 className="card-title special">{data.special}</h5>
                                 <h5 className="card-title email">EMAIL</h5>
-                                <h5 className="card-title bio">{data.bio} sasassas s sasassas s sasassas s sasassas s sasassas s sasassas s sasassas s sasassas s sasassas s sasassas s sasassas s sasassas s sasassas s sasassas s sasassas s sasassas s sasassas s sasassas s sasassas s sasassas s</h5>
+                                <h5 className="card-title bio">{data.bio}</h5>
                                 <h5 className="card-title docState" >{data.city}</h5>
                             </div>
                         </div>

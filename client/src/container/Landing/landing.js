@@ -74,6 +74,7 @@ const Landing = () => {
                                 </a>
                             </li>
                         }
+
                     </ul>
                 </div>
             </nav>
@@ -115,6 +116,7 @@ const Landing = () => {
             <footer className="text-center" id="footer">
                 By Team Unique
                 <br />
+
                 <i class="fab fa-linkedin"></i>
                 <i class="fab fa-facebook-square"></i>
                 <i class="fab fa-instagram"></i>
