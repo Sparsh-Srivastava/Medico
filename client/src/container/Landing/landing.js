@@ -94,7 +94,8 @@ const landing = () => {
                 </div>
                 <div className="aboutUs text-center">
                     <h1>About Us</h1>
-                      
+                    We at Medico believe that nothing can be achieved alone. So, we have contributed with the community to bring to you Medico. This is portal for all your medical needs all rolled into one.
+                    Wherever you are, whatever you need, whenever you need it, you can count on us.
                 </div>
             </div>
             <footer className="text-center" id="footer">
