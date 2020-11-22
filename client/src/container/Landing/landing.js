@@ -1,7 +1,16 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import img from './3731957.jpg';
 import './landing.css'
-const landing = () => {
+const Landing = () => {
+    const [signvalid, updateSignValid] = useState('');
+
+    const call = () => {
+        updateSignValid(localStorage.getItem('signupvalid'))
+    }
+
+    useEffect((e) => {
+        call();
+    }, [])
     return (
         <div className="landing">
             <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -12,53 +21,60 @@ const landing = () => {
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ml-auto">
-                    <li className="nav-item dropdown">
-                <a
-                  className="nav-link dropdown-toggle"
-                  href="#"
-                  id="navbarDropdown"
-                  role="button"
-                  data-toggle="dropdown"
-                  aria-haspopup="true"
-                  aria-expanded="false"
-                >
-                  Sign-Up
+                        <li className="nav-item dropdown">
+                            <a
+                                className="nav-link dropdown-toggle"
+                                href="#"
+                                id="navbarDropdown"
+                                role="button"
+                                data-toggle="dropdown"
+                                aria-haspopup="true"
+                                aria-expanded="false"
+                            >
+                                Sign-Up
                 </a>
-                <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <a className="dropdown-item" href="/signDoc">
-                    As a Doctor
+                            <div className="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a className="dropdown-item" href="/signDoc">
+                                    As a Doctor
                   </a>
-                  <a className="dropdown-item" href="/signPt">
-                    As a Patient
+                                <a className="dropdown-item" href="/signPt">
+                                    As a Patient
                   </a>
-                </div>
-              </li>
-              <li className="nav-item dropdown">
-                <a
-                  className="nav-link dropdown-toggle"
-                  href="#"
-                  id="navbarDropdown"
-                  role="button"
-                  data-toggle="dropdown"
-                  aria-haspopup="true"
-                  aria-expanded="false"
-                >
-                  Log In
+                            </div>
+                        </li>
+                        <li className="nav-item dropdown">
+                            <a
+                                className="nav-link dropdown-toggle"
+                                href="#"
+                                id="navbarDropdown"
+                                role="button"
+                                data-toggle="dropdown"
+                                aria-haspopup="true"
+                                aria-expanded="false"
+                            >
+                                Log In
                 </a>
-                <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <a className="dropdown-item" href="/loginDoc">
-                    As a Doctor
+                            <div className="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a className="dropdown-item" href="/loginDoc">
+                                    As a Doctor
                   </a>
-                  <a className="dropdown-item" href="/loginPt">
-                    As a Patient
+                                <a className="dropdown-item" href="/loginPt">
+                                    As a Patient
                   </a>
-                </div>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#footer">
-                  Contact Us <span className="sr-only"></span>
-                </a>
-              </li>
+                            </div>
+                        </li>
+                        {signvalid ?
+                            <li className="nav-item">
+                                <a className="nav-link" href="/dashboard">
+                                    Dashboard <span className="sr-only"></span>
+                                </a>
+                            </li> : <li className="nav-item">
+                                <a className="nav-link" href="#footer">
+                                    Contact Us <span className="sr-only"></span>
+                                </a>
+                            </li>
+                        }
+
                     </ul>
                 </div>
             </nav>
@@ -74,19 +90,19 @@ const landing = () => {
                 </div>
                 <div className="row align-items-center text-center features">
                     <div class="card col-md-3">
-                    <i class="fas fa-comments fa-5x card-img-top"></i> 
+                        <i class="fas fa-comments fa-5x card-img-top"></i>
                         <div class="card-body">
                             <h5 class="card-title">We help you communicate better</h5>
                         </div>
                     </div>
                     <div class="card col-md-3">
-                        <i class="fas fa-laptop-medical fa-5x card-img-top"></i> 
+                        <i class="fas fa-laptop-medical fa-5x card-img-top"></i>
                         <div class="card-body">
                             <h5 class="card-title">Find Medical Attention close to you</h5>
                         </div>
                     </div>
                     <div class="card col-md-3">
-                        <i class="fab fa-creative-commons-share fa-5x card-img-top"></i> 
+                        <i class="fab fa-creative-commons-share fa-5x card-img-top"></i>
                         <div class="card-body">
                             <h5 class="card-title">Share all your data at ease</h5>
                         </div>
@@ -100,7 +116,8 @@ const landing = () => {
             </div>
             <footer className="text-center" id="footer">
                 By Team Unique
-                <br/>
+                <br />
+
                 <i class="fab fa-linkedin"></i>
                 <i class="fab fa-facebook-square"></i>
                 <i class="fab fa-instagram"></i>
@@ -109,4 +126,4 @@ const landing = () => {
         </div>
     )
 }
-export default landing;
+export default Landing;

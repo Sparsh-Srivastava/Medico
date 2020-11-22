@@ -20,6 +20,7 @@ class Signup extends Component {
       // phone: "",
       // address: "",
       location: "",
+      valid: false,
       // valid: false,
       // userId: "",
     };
@@ -33,9 +34,10 @@ class Signup extends Component {
       city: this.state.location,
       password2: this.state.password,
     })
-      .then((res) => console.log("done"))
+      .then((res) => (this.setState({ valid: true }), localStorage.setItem('signupvalid', 'true')))
       .catch((err) => console.log(err));
   };
+
   handleChange(e) {
     this.setState({
       [e.target.name]: e.target.value,
@@ -47,6 +49,9 @@ class Signup extends Component {
   }
 
   render() {
+    if (this.state.valid) {
+      <Redirect to='/loginPt' />
+    }
     const options = [
       { value: 'Uttar Pradesh', label: 'Uttar Pradesh' },
       { value: 'Maharashtra', label: 'Maharashtra' },
