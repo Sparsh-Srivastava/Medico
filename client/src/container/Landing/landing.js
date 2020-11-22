@@ -85,7 +85,7 @@ const Landing = () => {
                     </div>
                     <div className="col-lg-4 text-center">
                         <h1 className="siteHead">MEDICO</h1>
-                        <h3 className="siteDesc">Will be there when you need us the most</h3>
+                        <h3 className="siteDesc">We'll be there when you need us the most</h3>
                     </div>
                 </div>
                 <div className="row align-items-center text-center features">
