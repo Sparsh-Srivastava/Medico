@@ -11,23 +11,27 @@ import main from "./container/Landing/landing";
 import DoctorView from "./container/DoctorView/DoctorView";
 /* import DoctorMsg from "./container/DoctorMsg"; */
 import PatientInfoForm from "./component/PatientInfo/PatientInfoForm";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 function App() {
   return (
-    <Switch>
-      <Route path="/" exact component={main}></Route>
-      <Route path="/loginPt" component={LoginPt}></Route>
-      <Route path="/signPt" component={SignPt}></Route>
+    <div>
+      <ToastContainer></ToastContainer>
+      <Switch>
+        <Route path="/" exact component={main}></Route>
+        <Route path="/loginPt" component={LoginPt}></Route>
+        <Route path="/signPt" component={SignPt}></Route>
 
-      <Route path="/doctorView" component={DoctorView} />
-      <Route path="/dashboard" component={Home}></Route>
-      <Route path="/loginDoc" component={LoginDoc}></Route>
+        <Route path="/doctorView" component={DoctorView} />
+        <Route path="/dashboard" component={Home}></Route>
+        <Route path="/loginDoc" component={LoginDoc}></Route>
 
+        <Route path="/signDoc" component={SignupDoc}></Route>
 
-      <Route path="/signDoc" component={SignupDoc}></Route>
-
-      <Route path="/patientInfoForm" component={PatientInfoForm} />
-      {/* <Route path="/doctorMsg"  component={DoctorMsg}></Route> */}
-    </Switch>
+        <Route path="/patientInfoForm" component={PatientInfoForm} />
+        {/* <Route path="/doctorMsg"  component={DoctorMsg}></Route> */}
+      </Switch>
+    </div>
   );
 }
 

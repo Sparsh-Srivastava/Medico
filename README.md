@@ -2,7 +2,6 @@
 
 Medico is a health web app that connects doctors and patients
 
-
 ## Tech Stack
 
 <ul>
@@ -11,6 +10,7 @@ Medico is a health web app that connects doctors and patients
 </ul>
 
 ## Quick Start
+
 <ul>
 <li> Fork and clone the repo using </li>
  </ul>
