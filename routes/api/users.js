@@ -69,7 +69,7 @@ router.post("/login", (req, res) => {
   User.findOne({ email }).then((user) => {
     // Check if user exists
     if (!user) {
-      return res.json({ error: "Email not found" });
+      return res.json({ success: false, error: "User not found" });
     }
     // Check password
     bcrypt.compare(password, user.password).then((isMatch) => {
@@ -96,7 +96,7 @@ router.post("/login", (req, res) => {
           }
         );
       } else {
-        return res.json({ error: "Password incorrect" });
+        return res.json({ success: false, error: "Password incorrect" });
       }
     });
   });

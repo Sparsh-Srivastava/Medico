@@ -5,6 +5,9 @@ import { Route, Redirect, Link } from "react-router-dom";
 import img from "./undraw_secure_login_pdn4.svg";
 import "./loginPt.css";
 import Axios from "axios";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 class Login extends Component {
   constructor(props) {
     super(props);
@@ -44,8 +47,23 @@ class Login extends Component {
           localStorage.setItem("isLoggedIn", res.data.success);
           localStorage.setItem("patientToken", res.data.token);
           console.log(res);
-          this.setState({ token: res.data })
-
+          if (res.data.success) {
+            this.props.history.push("/dashboard");
+            toast.success("Welcome to medico", {
+              position: "top-center",
+              autoClose: 4500,
+              closeOnClick: true,
+              pauseOnHover: true,
+            });
+          } else {
+            toast.error(res.data.error, {
+              position: "top-center",
+              autoClose: 4500,
+              closeOnClick: true,
+              pauseOnHover: true,
+            });
+          }
+          this.setState({ token: res.data });
         }
         // this.setState({ valid: res.data.token, userId: res.data.userId })
         // console.log(res)
@@ -54,9 +72,9 @@ class Login extends Component {
 
     console.log(localStorage.getItem("token"));
 
-    const isLoggedIn = localStorage.getItem('isLoggedIn');
+    const isLoggedIn = localStorage.getItem("isLoggedIn");
     if (isLoggedIn) {
-      <Redirect to='/'></Redirect>
+      <Redirect to="/"></Redirect>;
     }
   };
   handleChange(e) {
@@ -115,17 +133,19 @@ class Login extends Component {
                   </a>
                 </div>
               </li>
-              {this.state.token ?
+              {this.state.token ? (
                 <li className="nav-item">
                   <a className="nav-link" href="/dashboard">
                     Dashboard<span className="sr-only"></span>
                   </a>
-                </li> : <li className="nav-item">
+                </li>
+              ) : (
+                <li className="nav-item">
                   <a className="nav-link" href="/#">
                     Contact us<span className="sr-only"></span>
                   </a>
                 </li>
-              }
+              )}
             </ul>
           </div>
         </nav>
