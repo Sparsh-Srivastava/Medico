@@ -1,15 +1,16 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import "./dashboard.css";
-import img from "./Auth/LoginDoc/undraw_authentication_fsn5 (2).svg";
 import Axios from "axios";
 import DoctorView from "./DoctorView/DoctorView";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 /* import DoctorView from './DoctorView/DoctorView' */
 const Home = () => {
   const [Doctors, updateDoctor] = useState([]);
   const [patient, updatePatient] = useState([]);
-
+  let history = useHistory();
   const DoctorList = async () => {
     await Axios.get("http://localhost:5000/allDoctors")
       .then((res) => updateDoctor(res.data))
@@ -28,7 +29,16 @@ const Home = () => {
       })
       .catch((err) => console.log(err));
   };
-  console.log(patient, "hello");
+  const onLogout = () => {
+    localStorage.clear();
+    history.push("/");
+    toast.info("User logged out", {
+      position: "top-center",
+      autoClose: 4500,
+      closeOnClick: true,
+      pauseOnHover: true,
+    });
+  };
 
   useEffect((e) => {
     PatientInfo();
@@ -50,7 +60,7 @@ const Home = () => {
           <div className="col-lg-6">
             <Link
               to="/doctorView"
-              onClick={() => localStorage.setItem("id", data._id)}
+              onClick={() => localStorage.setItem("doctorId", data._id)}
               className="btn rounded btn-primary profile"
             >
               Profile
@@ -105,9 +115,9 @@ const Home = () => {
   return (
     <div className="home">
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a className="navbar-brand" href="#">
+        <Link className="navbar-brand" href="#">
           Medico
-        </a>
+        </Link>
         <button
           className="navbar-toggler"
           type="button"
@@ -121,7 +131,7 @@ const Home = () => {
         </button>
         <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div className="navbar-nav  ml-auto">
-            <a className="nav-link active" href="/">
+            <a className="nav-link active" onClick={onLogout}>
               Log-Out <span className="sr-only">(current)</span>
             </a>
           </div>

@@ -12,6 +12,7 @@ import DoctorView from "./container/DoctorView/DoctorView";
 /* import DoctorMsg from "./container/DoctorMsg"; */
 import PatientInfoForm from "./component/PatientInfo/PatientInfoForm";
 import { ToastContainer, toast } from "react-toastify";
+import PatientDashboard from "./container/PatientDashboard/PatientDashboard";
 import "react-toastify/dist/ReactToastify.css";
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
         <Route path="/signDoc" component={SignupDoc}></Route>
 
         <Route path="/patientInfoForm" component={PatientInfoForm} />
+        <Route path="/patientDashboard" component={PatientDashboard} />
         {/* <Route path="/doctorMsg"  component={DoctorMsg}></Route> */}
       </Switch>
     </div>
