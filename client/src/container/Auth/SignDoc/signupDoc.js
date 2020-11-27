@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Redirect, Link } from "react-router-dom";
-import Select from 'react-select'
+import Select from "react-select";
 import img from "./undraw_sign_in_e6hj.svg";
 import "./signupDoc.css";
 import Axios from "axios";
@@ -19,6 +19,7 @@ class Signup extends Component {
       // phone: "",
       address: "",
       location: "",
+      photo: "",
       // valid: false,
       // userId: "",
     };
@@ -34,6 +35,7 @@ class Signup extends Component {
       password2: this.state.password,
       special: this.state.special,
       bio: this.state.bio,
+      photo: this.state.photo,
     })
       .then((res) => console.log("done"))
 
@@ -45,43 +47,42 @@ class Signup extends Component {
     });
   }
 
-
   handleChange2(e) {
-    this.setState({ location: e.value })
+    this.setState({ location: e.value });
   }
 
   render() {
     const options = [
-      { value: 'Uttar Pradesh', label: 'Uttar Pradesh' },
-      { value: 'Maharashtra', label: 'Maharashtra' },
-      { value: 'Bihar', label: 'Bihar' },
-      { value: 'West Bengal', label: 'West Bengal' },
-      { value: 'Madhya Pradesh', label: 'Madhya Pradesh' },
-      { value: 'Tamil Nadu', label: 'Tamil Nadu' },
-      { value: 'Rajasthan', label: 'Rajasthan' },
-      { value: 'Karnataka', label: 'Karnataka' },
-      { value: 'Gujarat', label: 'Gujarat' },
-      { value: 'Andhra Pradesh', label: 'Andhra Pradesh' },
-      { value: 'Odisha', label: 'Odisha' },
-      { value: 'Telangana', label: 'Telangana' },
-      { value: 'Kerala', label: 'Kerala' },
-      { value: 'Jharkhand', label: 'Jharkhand' },
-      { value: 'Assam', label: 'Assam' },
-      { value: 'Punjab', label: 'Punjab' },
-      { value: 'Chattisgarh', label: 'Chattisgarh' },
-      { value: 'Haryana', label: 'Haryana' },
-      { value: 'Delhi', label: 'Delhi' },
-      { value: 'Jammu and Kashmir', label: 'Jammu and kashmir' },
-      { value: 'Uttarakhand', label: 'Uttarakhand' },
-      { value: 'Himachal Pradesh', label: 'Himachal Pradesh' },
-      { value: 'Tripura', label: 'Tripura' },
-      { value: 'Meghalaya', label: 'Mehghalaya' },
-      { value: 'Manipur', label: 'Manipur' },
-      { value: 'Nagaland', label: 'Nagaland' },
-      { value: 'Goa', label: 'Goa' },
-      { value: 'Arunachal Pradesh', label: 'Arunachal Pradesh' },
-      { value: 'Mizoram', label: 'Mizoram' },
-    ]
+      { value: "Uttar Pradesh", label: "Uttar Pradesh" },
+      { value: "Maharashtra", label: "Maharashtra" },
+      { value: "Bihar", label: "Bihar" },
+      { value: "West Bengal", label: "West Bengal" },
+      { value: "Madhya Pradesh", label: "Madhya Pradesh" },
+      { value: "Tamil Nadu", label: "Tamil Nadu" },
+      { value: "Rajasthan", label: "Rajasthan" },
+      { value: "Karnataka", label: "Karnataka" },
+      { value: "Gujarat", label: "Gujarat" },
+      { value: "Andhra Pradesh", label: "Andhra Pradesh" },
+      { value: "Odisha", label: "Odisha" },
+      { value: "Telangana", label: "Telangana" },
+      { value: "Kerala", label: "Kerala" },
+      { value: "Jharkhand", label: "Jharkhand" },
+      { value: "Assam", label: "Assam" },
+      { value: "Punjab", label: "Punjab" },
+      { value: "Chattisgarh", label: "Chattisgarh" },
+      { value: "Haryana", label: "Haryana" },
+      { value: "Delhi", label: "Delhi" },
+      { value: "Jammu and Kashmir", label: "Jammu and kashmir" },
+      { value: "Uttarakhand", label: "Uttarakhand" },
+      { value: "Himachal Pradesh", label: "Himachal Pradesh" },
+      { value: "Tripura", label: "Tripura" },
+      { value: "Meghalaya", label: "Mehghalaya" },
+      { value: "Manipur", label: "Manipur" },
+      { value: "Nagaland", label: "Nagaland" },
+      { value: "Goa", label: "Goa" },
+      { value: "Arunachal Pradesh", label: "Arunachal Pradesh" },
+      { value: "Mizoram", label: "Mizoram" },
+    ];
 
     if (this.state.valid) {
       localStorage.setItem("token", this.state.valid);
@@ -243,7 +244,24 @@ class Signup extends Component {
                         ></input>
                       </div>
                     </div>
-
+                    <div className="row">
+                      <div className="col-sm-2">
+                        <label>
+                          <i className="fas fa-map-marked-alt fa-lg"></i>
+                        </label>
+                      </div>
+                      <div className="col-sm-10">
+                        <input
+                          value={this.state.photo}
+                          type="text"
+                          name="photo"
+                          placeholder="Profile Photo link"
+                          className="form-control"
+                          aria-describedby="emailHelp"
+                          onChange={this.handleChange}
+                        ></input>
+                      </div>
+                    </div>
                     <div className="row">
                       <div className="col-sm-2">
                         <label>

@@ -5,6 +5,9 @@ import { Route, Redirect, Link } from "react-router-dom";
 import img from "./undraw_authentication_fsn5 (2).svg";
 import "./loginDoc.css";
 import Axios from "axios";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 class Login extends Component {
   constructor(props) {
     super(props);
@@ -40,6 +43,21 @@ class Login extends Component {
       .then((res) => {
         localStorage.setItem("doctorId", res.data.id);
         localStorage.setItem("doctorToken", res.data.token);
+        if (res.data.success) {
+          toast.success("Welcome to medico", {
+            position: "top-center",
+            autoClose: 4500,
+            closeOnClick: true,
+            pauseOnHover: true,
+          });
+        } else {
+          toast.error(res.data.error, {
+            position: "top-center",
+            autoClose: 4500,
+            closeOnClick: true,
+            pauseOnHover: true,
+          });
+        }
       })
       .catch((err) => console.log(err));
   };

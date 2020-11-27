@@ -124,6 +124,7 @@ router.post("/registerDoc", (req, res) => {
         bio: req.body.bio,
         city: req.body.city,
         state: req.body.state,
+        photo: req.body.photo,
       });
       // Hash password before saving in database
       bcrypt.genSalt(10, (err, salt) => {
@@ -156,7 +157,7 @@ router.post("/loginDoc", (req, res) => {
   Doc.findOne({ email }).then((doc) => {
     // Check if user exists
     if (!doc) {
-      return res.json({ error: "Email not found" });
+      return res.json({ success: false, error: "Email not found" });
     }
     // Check password
     bcrypt.compare(password, doc.password).then((isMatch) => {
@@ -183,7 +184,7 @@ router.post("/loginDoc", (req, res) => {
           }
         );
       } else {
-        return res.json({ error: "Password incorrect" });
+        return res.json({ success: false, error: "Password incorrect" });
       }
     });
   });
@@ -275,11 +276,11 @@ router.post("/getDoctorsAtLocation", (req, res) => {
 
 // Get Patient Information
 router.post("/getPatientInfo", (req, res) => {
-  User.findById(req.body.patientId, (err, doctors) => {
+  User.findById(req.body.patientId, (err, patient) => {
     if (err) {
       console.log(err);
     } else {
-      res.json(doctors);
+      res.json(patient);
     }
   });
 });
